@@ -1,11 +1,15 @@
 This repo contains code snippets written in python.
 Tools needed:
-1. pytest
+1. git
+2. pytest
 
 
 How to install tools:
 ---------------------
-1. Pytest:
+1. Git:
+TODO: Need to update this ;-).
+
+2. Pytest:
 pip install -U pytest
 sudo pip install -U pytest
 
