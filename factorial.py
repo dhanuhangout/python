@@ -4,7 +4,6 @@
 def factorial_of_num(num):
     fact = 1
     for i in range(1, num+1):
-	if i <= num:
 	  fact *= i
     return fact
 
