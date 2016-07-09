@@ -1,8 +1,8 @@
 import os, sys
 
-src_dir = '../programs/'
+SRC_DIR = '../programs/'
 
-sys.path.append(src_dir)
+sys.path.append(SRC_DIR)
 import factorial as FactObj
 
 def test_factorial():
