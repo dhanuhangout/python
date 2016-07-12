@@ -53,3 +53,24 @@ Commit the change: git commit -m "Message that explains the reason of change in
 file."
 Push change to master: git push origin master
 
+
+Some Notes:
+-----------
+1. Since, dhanraju repo is ahead of dhanuhangout; Followed below procedure to
+update dhanraju master branch:
+
+- Create a folder with dhanuhangout user and ha*******10@gmail.com email.
+mkdir dhanuhangout_python
+cd dhanuhangout_python
+git init
+git config user.name dhanuhangout
+git config user.email ha********10@gmail.com
+- Pull master branch of dhanraju (Remember not dhanuhangout, though the user is
+	dhanuhangout).
+git remote add origin https://github.com/dhanraju/python.git
+git pull origin master
+- Edit file and commit the code.
+git add Readme.txt
+git commit -m "Sync to dhanraju master branch with dhanuhangout user and
+uploading all files to dhanuhangout master branch"
+git push -u origin master
