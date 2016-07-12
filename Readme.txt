@@ -54,6 +54,7 @@ file."
 Push change to master: git push origin master
 
 
+<<<<<<< HEAD
 Some Notes:
 -----------
 1. Since, dhanraju repo is ahead of dhanuhangout; Followed below procedure to
@@ -79,3 +80,11 @@ dhanraju.
 git commit -m "Sync to dhanraju master branch with dhanuhangout user and
 uploading all files to dhanuhangout master branch"
 git push -u origin master
+=======
+Some more notes:
+----------------
+- As we know, if a file get modified; then the status of it is "modified". If
+want to revert this modified file, use command "git checkout <file name>
+- If a file get added and not commited, then to revert that modified file, run
+"git reset" and then "git checkout <file name> commands.
+>>>>>>> a383d35ba4facc7853e17da1a42c6583344deff4
