@@ -54,7 +54,6 @@ file."
 Push change to master: git push origin master
 
 
-<<<<<<< HEAD
 Some Notes:
 -----------
 1. Since, dhanraju repo is ahead of dhanuhangout; Followed below procedure to
@@ -80,11 +79,68 @@ dhanraju.
 git commit -m "Sync to dhanraju master branch with dhanuhangout user and
 uploading all files to dhanuhangout master branch"
 git push -u origin master
-=======
+
+
 Some more notes:
 ----------------
 - As we know, if a file get modified; then the status of it is "modified". If
 want to revert this modified file, use command "git checkout <file name>
 - If a file get added and not commited, then to revert that modified file, run
 "git reset" and then "git checkout <file name> commands.
->>>>>>> a383d35ba4facc7853e17da1a42c6583344deff4
+
+
+
+
+
+Merging two master branches:
+----------------------------
+Both dhanuhangout/python and dhanraju/python remote names are origin and both
+are respective master branches. Here dhanraju/python is fork of
+dhanuhangout/python.
+Permissions: dhanuhangout have collaborations permissions to dhanraju/python
+master (which was given permissions through github.com under dhanraju account).
+Create a folder, initialize git with dhanuhangout credentials.
+Now, do git remote add origin of dhanraju/python.git.
+Pull git repo.
+Now, remove origin "git remote rm origin"
+Do git remote add origin of dhanuhangout/python.git.
+Pull git repo. Observer there is some difference in Readme.txt file. Since it is
+the only file that has difference between both masters.
+Add Readme file, commit it and push it to origin master.
+
+
+git init
+git config user.name dhanuhangout
+git config user.email hangouttest10@gmail.com
+git remote -v
+git remote add origin https://github.com/dhanraju/python.git
+git pull origin master
+git remote rm origin
+git remote add origin https://github.com/dhanuhangout/python.git
+git pull origin master
+git add Readme.txt 
+git commit -m "Attempt to push dhanraju master to dhanuhangout master."
+git push -u origin master
+
+
+
+
+
+Before: (@dhanuhangout github graph)
+-------
+dhanuhangout    *-----*-----*-----*------------------------------*
+                                  |
+dhanraju                          *-----*-----*-----*-----*
+
+After: (@dhanuhangout github graph)
+------
+dhanuhangout    *-----*-----*-----*------------------------------*
+                                  |                             /
+                                  -----------------------------*
+
+(@dhanraju github graph)
+dhanraju    *-----*-----*-----*-----*-----*-----*-----*-----*
+                              |                             
+dhanuhangout                  -----------------------------*----->*
+
+
