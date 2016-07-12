@@ -69,8 +69,13 @@ git config user.email ha********10@gmail.com
 	dhanuhangout).
 git remote add origin https://github.com/dhanraju/python.git
 git pull origin master
-- Edit file and commit the code.
+- Edit file
 git add Readme.txt
+- login to github.com with user dhanraju and all dhanuhangout in
+settings->collaborators and then sign out.
+- login to github.com with user dhanuhangout and accept invitation from
+dhanraju.
+- Now commit the code.
 git commit -m "Sync to dhanraju master branch with dhanuhangout user and
 uploading all files to dhanuhangout master branch"
 git push -u origin master
