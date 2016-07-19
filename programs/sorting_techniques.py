@@ -1,6 +1,6 @@
 """This module demonstrates sorting techniques."""
 
-class SortingTechnique(object):
+class SortingTechniques(object):
     """Sorting Techniques class."""
     def __init__(self):
         print "Constructor"
@@ -17,17 +17,37 @@ class SortingTechnique(object):
         return list_obj
 
     @classmethod
+    def insertion_sort(cls, list_obj):
+        """Insertion sort technique."""
+        pass
+
+    @classmethod
+    def selection_sort(cls, list_obj):
+        """Selection sort technique."""
+        pass
+
+    @classmethod
     def quick_sort(cls, list_obj):
-        """Bubble sort technique."""
+        """Quick sort technique."""
+        pass
+
+    @classmethod
+    def merge_sort(cls, list_obj):
+        """Merge sort technique."""
+        pass
+
+    @classmethod
+    def heap_sort(cls, list_obj):
+        """Heap sort technique."""
         pass
 
 
 def main():
     """Start of program."""
-    sorting_obj = SortingTechnique()
+    sort_obj = SortingTechniques()
     list_obj = [5, 3, 6, 2, 4, 1]
     print "Given list : ", list_obj
-    print "Bubble sorted list : ", sorting_obj.bubble_sort(list_obj)
+    print "Bubble sorted list : ", sort_obj.bubble_sort(list_obj)
 
 if __name__ == '__main__':
     main()
