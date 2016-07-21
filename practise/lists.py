@@ -59,3 +59,51 @@ print
 print "***** List Operations *****"
 print "list_obj1 '+' list_obj2 = ", (list_obj1+list_obj2)
 print "list_obj1 '*' 2 = ", (list_obj1*2)
+
+
+
+""" ---------------- OUTPUT -----------------
+***** List operations *****
+
+***** Given lists *****
+list_obj1 =  [1, 2, 1, 2, 3]
+list_obj2 =  [4, 5, 6, 7, 8]
+list_obj3 =  [3, 2, 1, 2, 1]
+list_obj4 =  [0, 9, 8, 7, 6]
+list_obj1_dup =  [1, 2, 1, 2, 3]
+
+***** List Indexing *****
+list_obj1[0] =  1
+list_obj1[4] =  3
+list_obj1[-1] =  3
+list_obj1[-4] =  2
+
+***** List slicing *****
+list_obj1[:] =  [2, 1, 2, 3]
+list_obj1[:3] =  [1, 2, 1]
+list_obj1[2:] =  [1, 2, 3]
+list_obj1[2:4] =  [1, 2]
+
+***** List Methods *****
+list_obj1.count(1) =  2
+list_obj1.index(3) =  4
+list_obj2.append(9) =  [4, 5, 6, 7, 8, 9]
+list_obj2.reverse() =  [9, 8, 7, 6, 5, 4]
+list_obj2.sort() =  [4, 5, 6, 7, 8, 9]
+list_obj2.extend(tuple_obj) =  [4, 5, 6, 7, 8, 9, 'a', 'b', 'c', 'd', 'e']
+list_obj2.remove(8) =  [4, 5, 6, 7, 9, 'a', 'b', 'c', 'd', 'e']
+list_obj2.pop(-4) =  [4, 5, 6, 7, 9, 'a', 'c', 'd', 'e']
+list_obj2.sort() =  [4, 5, 6, 7, 9, 'a', 'c', 'd', 'e']
+
+***** List Functions *****
+len(list_obj4) =  5
+max(list_obj4) =  9
+min(list_obj4) =  0
+cmp(list_obj1, list_obj1_dup) =  0
+list(tuple_obj) =  ['a', 'b', 'c', 'd', 'e']
+
+***** List Operations *****
+list_obj1 '+' list_obj2 =  [1, 2, 1, 2, 3, 4, 5, 6, 7, 9, 'a', 'c', 'd', 'e']
+list_obj1 '*' 2 =  [1, 2, 1, 2, 3, 1, 2, 1, 2, 3]
+
+"""
