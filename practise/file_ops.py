@@ -16,6 +16,16 @@ def f_mode_rplus(f_obj):
     print
     print "Read data"
     print f_obj.read(10)
+    print
+    print "Current file position : ", f_obj.tell()
+    print
+    print "Repositioning file pointer at the beginning of file."
+    f_obj.seek(0, 0)
+    print
+    print "Again Read data"
+    print f_obj.read(10)
+    print
+
 
 DICT_FILE_MODES = {
     "wb" : f_mode_wb,
