@@ -10,6 +10,7 @@ def insert_left(root, new_branch):
     root.insert(1, [new_branch, temp, []] )
   else:
     root.insert(1, [new_branch, [], []] )
+  return root
 
 def insert_right(root, new_branch):
   temp = root.pop(2)
@@ -33,20 +34,17 @@ def get_left_child(root):
 
 
 root = binary_tree(3)
-print(root)
 insert_left(root, 4)
 insert_left(root, 5)
-print(root)
 insert_right(root, 6)
 insert_right(root, 7)
-print(root)
 li = get_left_child(root)
 print(li)
 
-set_root_val(1, 9)
-print(root)
+# set_root_val(1, 9)
+#print(root)
 
-insert_left(1, 11)
-print(root)
+#insert_left(1, 11)
+#print(root)
 
 print(get_right_child(get_right_child(root)))
