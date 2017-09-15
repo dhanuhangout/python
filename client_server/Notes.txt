@@ -1,0 +1,66 @@
+Ref:
+http://www.bogotobogo.com/python/python_network_programming_tcp_server_client_chat_server_chat_client_select.php
+
+
+Run the code:
+-------------
+We should run the server first:
+$ python chat_server.py
+Chat server started on port 9009
+
+Then, the client code:
+$ python chat_client.py localhost 9009
+Connected to remote host. You can start sending messages
+
+
+Note that the client should use the same port number as the server does.
+
+
+Here are the output from a sample run:
+// server terminal
+$ python chat_server.py
+Chat server started on port 9009
+Client (127.0.0.1, 48952) connected
+Client (127.0.0.1, 48953) connected
+Client (127.0.0.1, 48954) connected
+
+
+// client 1 terminal
+$ python chat_client.py localhost 9009
+Connected to remote host. You can start sending messages
+[Me] [127.0.0.1:48953] entered our chatting room
+[Me] [127.0.0.1:48954] entered our chatting room
+[Me] client 1
+[('127.0.0.1', 48953)] client 2
+[('127.0.0.1', 48954)] client 3
+[Me] Client (127.0.0.1, 48954) is offline
+[Me] 
+
+
+// client 2 terminal
+$ python chat_client.py localhost 9009
+Connected to remote host. You can start sending messages
+[Me] [127.0.0.1:48953] entered our chatting room
+[Me] [127.0.0.1:48954] entered our chatting room
+[Me] client 1
+[('127.0.0.1', 48953)] client 2
+[('127.0.0.1', 48954)] client 3
+[Me] Client (127.0.0.1, 48954) is offline
+[Me] 
+
+// client 3 terminal
+$ python chat_client.py localhost 9009
+Connected to remote host. You can start sending messages
+[('127.0.0.1', 48952)] client 1
+[('127.0.0.1', 48953)] client 2
+[Me] client 3
+[Me] ^CTraceback (most recent call last):
+  File "chat_client.py", line 52, in 
+    sys.exit(chat_client())
+  File "chat_client.py", line 30, in chat_client
+    read_sockets, write_sockets, error_sockets = select.select(socket_list , [], [])
+KeyboardInterrupt
+
+
+
+Note that the client #3 did go off the line at the end by typing ^C
