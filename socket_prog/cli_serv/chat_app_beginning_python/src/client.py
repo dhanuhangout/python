@@ -30,7 +30,7 @@ class ChatClient(object):
             raise ClientError(response)
         print response
         #Start out by printing out the list of members.
-        self.output.write('/names\r\n')
+        self.output.write('/users\r\n')
         print "Currently in the chat room:", self.input.readline().strip()
         self.run()
 

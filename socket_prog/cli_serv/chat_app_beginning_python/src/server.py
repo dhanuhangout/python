@@ -2,6 +2,7 @@
 import SocketServer
 import re
 import socket
+import time
 
 
 class ClientError(Exception):
@@ -21,6 +22,8 @@ class ChatServer(SocketServer.ThreadingTCPServer):
 class RequestHandler(SocketServer.StreamRequestHandler):
     """A class that handles all the client's requests."""
     NICKNAME = re.compile('^[A-Za-z0-9_-]+$') # Regex for a valid nickname
+    LENGTH_OF_QUEUE = 100
+    msgs_queue = []
 
     def handle(self):
         self.nickname = None
@@ -41,7 +44,6 @@ class RequestHandler(SocketServer.StreamRequestHandler):
         while not done:
             try:
                 done = self.process_input()
-                print 'done = ', done
             except ClientError, error:
                 self.private_message(str(error))
             except socket.error, error:
@@ -101,16 +103,38 @@ class RequestHandler(SocketServer.StreamRequestHandler):
             self.parting_words = parting_words
         return True
 
-    def names_command(self, ignored):
-        """Names command."""
+    def users_command(self, ignored):
+        """Users command."""
         self.private_message(', '.join(self.server.users.keys()))
+
+    def messages_command(self, ignored):
+        """Messages command."""
+        self.wfile.write(self.msgs_queue)
+        self.wfile.write('\r\n')
 
     def broadcast(self, message, include_this_user=True):
         """Broadcast message to all clients."""
         message = self._ensure_newline(message)
+        msg_time = time.time()
         for user, output in self.server.users.items():
             if include_this_user or user != self.nickname:
                 output.write(message)
+        # Update message information in a queue.
+        if '<' and '>' in message:
+            # Get user of the message.
+            user = message.split('>')[0].split('<')[1]
+            # Filter out message.
+            message = str(message.split('>')[1].split('\n')[0])
+            message_info = [msg_time, user, message]
+            self._update_msgs_queue(message_info)
+
+    def _update_msgs_queue(self, message_info):
+        """Update queue with new message and maintain 100 messages only."""
+        if len(self.msgs_queue) == self.LENGTH_OF_QUEUE:
+            # Pop out old message from queue
+            self.msgs_queue.pop(0)
+        self.msgs_queue.append({"timestamp": message_info[0],
+            "user": message_info[1], "text": message_info[2]})
 
     def private_message(self, message):
         """Send private message to user."""
@@ -123,7 +147,7 @@ class RequestHandler(SocketServer.StreamRequestHandler):
     def _ensure_newline(self, newline):
         """Ensure the line ends with new line character."""
         if newline and newline[-1] != '\n':
-    		newline += '\r\n'
+            newline += '\r\n'
         return newline
 
     def _parse_command(self, cmd):
