@@ -1,0 +1,2 @@
+These examples are written from:
+https://www.tutorialspoint.com/python/python_multithreading.htm
