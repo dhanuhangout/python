@@ -4,6 +4,8 @@ import re
 import socket
 import time
 
+HOSTNAME='127.0.0.1'
+PORT=8081
 
 class ClientError(Exception):
     """Client Exception."""
@@ -14,6 +16,8 @@ class ChatServer(SocketServer.ThreadingTCPServer):
     """The server class."""
 
     def __init__(self, server_address, RequestHandlerClass):
+        if server_address == None:
+            server_address = (HOSTNAME, PORT)
         SocketServer.ThreadingTCPServer.__init__(self, server_address,
                                                  RequestHandlerClass)
         self.users = {}
@@ -170,8 +174,9 @@ class RequestHandler(SocketServer.StreamRequestHandler):
 if __name__ == '__main__':
     import sys
     if len(sys.argv) < 3:
-        print 'Usage: %s [hostname] [port num]' % sys.argv[0]
-        sys.exit(1)
-    HOSTNAME = sys.argv[1]
-    PORT = int(sys.argv[2])
-    ChatServer((HOSTNAME, PORT), RequestHandler).serve_forever()
+        hostname = HOSTNAME
+        port = PORT
+    else:
+        hostname = sys.argv[1]
+        port = int(sys.argv[2])
+    ChatServer((hostname, port), RequestHandler).serve_forever()

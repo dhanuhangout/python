@@ -6,6 +6,9 @@ import sys
 import os
 from threading import Thread
 
+HOSTNAME='127.0.0.1'
+PORT=8081
+
 
 class ClientError(Exception):
     """Client class Exception."""
@@ -82,14 +85,12 @@ if __name__ == '__main__':
     except ImportError:
         DEFAULT_NICKNAME = None
 
-    if len(sys.argv) < 3 or not DEFAULT_NICKNAME and len(sys.argv) < 4:
-        print 'Usage: %s [hostname] [port number] [username]' % sys.argv[0]
+    if len(sys.argv) < 2 or not DEFAULT_NICKNAME:
+        print 'Usage: %s [username]' % sys.argv[0]
         sys.exit(1)
 
-    HOSTNAME = sys.argv[1]
-    PORT = int(sys.argv[2])
-    if len(sys.argv) > 3:
-        NICKNAME = sys.argv[3]
+    if len(sys.argv) > 1:
+        NICKNAME = sys.argv[1]
     else:
         #We must be on a system with usernames, or we would have
         #exited earlier.
