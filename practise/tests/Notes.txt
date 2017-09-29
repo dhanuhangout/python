@@ -5,3 +5,5 @@ http://pythontesting.net/framework/unittest/unittest-fixtures/
 How to run:
 py.test test_program.py
 py.test test_sorting_techniques.py
+py.test -v test_programs.py
+py.test -s test_programs.py
