@@ -22,13 +22,11 @@ Person2 = [
 ]
 '''
 
-person_data = {
-  'name' : '',
-  'date' : [],
-  'place' : [],
-  'bank_name' : [],
-  'time_spent' : []
-}
+import os, sys
+
+C_DIR = os.getcwd()
+DATA_STRUCT_PATH = '%s/data_struct.config' % C_DIR
+
 
 class _PersonData:
   def __init__(self, name):
@@ -39,8 +37,14 @@ class _PersonData:
     self.bank_name = []
     self.time_spent = []
 
+# Create a dictionary called data_base using list comprehension technique.
+with open(DATA_STRUCT_PATH) as fp:
+  persons = list(eval(fp.read()))
 
-data_base = {
+data_base = {person: _PersonData(person) for person in persons}
+
+# The above logic can be directly implemented as below.
+'''data_base = {
   'personA': _PersonData('personA'),
   'personB': _PersonData('personB'),
   'personC': _PersonData('personC'),
@@ -51,7 +55,7 @@ data_base = {
   'personH': _PersonData('personH'),
   'personI': _PersonData('personI'),
   'personJ': _PersonData('personJ'),
-}
+}'''
 
 
 if __name__ == '__main__':
