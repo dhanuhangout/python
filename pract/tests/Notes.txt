@@ -1,0 +1,7 @@
+Python unittesting reference is here:
+http://pythontesting.net/framework/pytest/pytest-introduction/
+http://pythontesting.net/framework/unittest/unittest-fixtures/
+
+How to run:
+py.test test_program.py
+py.test test_sorting_techniques.py
