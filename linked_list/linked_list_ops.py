@@ -1,20 +1,24 @@
 
 class Node:
+  '''Node class containing a data and link.'''
   def __init__(self):
     self.data = None
     self.link = None
 
 class LinkedList:
+  '''Class that performs linked list operations.'''
   def __init__(self):
     self.node = Node()
 
   def add_atbegin(self, num):
+    '''Adds a node at the beginning of a linked list.'''
     temp = Node()
     temp.data = num
     temp.link = self.node
     self.node = temp
 
   def add_atend(self, num):
+    '''Adds a node at the end of a linked list.'''
     temp = Node()
     r = Node()
     if self.node.data == None:
@@ -28,6 +32,7 @@ class LinkedList:
       temp.link = r
 
   def add_after(self, loc, num):
+    '''Adds a node after the specified number of nodes.'''
     temp = Node()
     r = Node()
     temp = self.node
@@ -41,6 +46,7 @@ class LinkedList:
     temp.link = r
 
   def delete(self, num):
+    '''Deletes the specified node from the linked list.'''
     old = Node()
     temp = Node()
     temp = self.node
@@ -61,7 +67,7 @@ class LinkedList:
     print 'Element %d not found' % num
 
   def display(self):
-    '''Display all nodes present in linked list.'''
+    '''Display the contents of the linked list.'''
     print 'Contents of linked list are:'
     temp = self.node
     # print self.node.data, self.node.link
@@ -73,6 +79,7 @@ class LinkedList:
       print temp.data
 
   def count(self):
+    '''Count the number of nodes present in the linked list.'''
     print 'Returns count of number of nodes present in list.'
     c = 0
     temp = self.node
