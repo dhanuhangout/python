@@ -1,42 +1,47 @@
+'''Non synchronous threads.'''
 #!/usr/bin/python
 
 import threading
 import time
 
-exitFlag = 0
+EXITFLAG = 0
 
-class myThread (threading.Thread):
-   def __init__(self, threadID, name, counter):
-      threading.Thread.__init__(self)
-      self.threadID = threadID
-      self.name = name
-      self.counter = counter
-   def run(self):
-      print "Starting " + self.name
-      print_time(self.name, self.counter, 5)
-      print "Exiting " + self.name
+class MyThread(threading.Thread):
+    '''My thread.'''
+    def __init__(self, t_id, name, counter):
+        threading.Thread.__init__(self)
+        self.thread_id = t_id
+        self.name = name
+        self.counter = counter
+    def run(self):
+        '''Run Thread.'''
+        print "Starting " + self.name
+        print_time(self.name, self.counter, 5)
+        print "Exiting " + self.name
 
-def print_time(threadName, counter, delay):
-   while counter:
-      if exitFlag:
-         threadName.exit()
-      time.sleep(delay)
-      print "%s: %s" % (threadName, time.ctime(time.time()))
-      counter -= 1
+def print_time(thread_name, counter, delay):
+    '''Pring time.'''
+    while counter:
+        if EXITFLAG:
+            thread_name.exit()
+        time.sleep(delay)
+        print "%s: %s" % (thread_name, time.ctime(time.time()))
+        counter -= 1
 
 # Create new threads
-thread1 = myThread(1, "Thread-1", 1)
-thread2 = myThread(2, "Thread-2", 2)
+THREAD1 = MyThread(1, "Thread-1", 1)
+THREAD2 = MyThread(2, "Thread-2", 2)
 
 # Start new Threads
-thread1.start()
-thread2.start()
+THREAD1.start()
+THREAD2.start()
 
 print "Exiting Main Thread"
 
+#pylint: disable=pointless-string-statement
 '''
 OUTPUT:
-$ python nonsync_threads.py 
+$ python nonsync_threads.py
 Starting Thread-1
 Starting Thread-2
  Exiting Main Thread

@@ -16,7 +16,7 @@ class StackQueueUsingLists(object):
 
     def push_atbegin(self, element):
         """Push operation at begin of list."""
-        self.stack_list.append()
+        self.stack_list.append(element)
 
     def pop_atend(self):
         """Pop operation."""
@@ -43,14 +43,14 @@ def main():
     stack_obj = StackQueueUsingLists()
     print "Enter stack elements with space between each element. eg: 1 2 3 4"
     # raw_input takes given input as string. Convert it to list using split().
-    # TODO: Implement parsing login to accept any pattery of input.
+    # TODO(Dhan): Implement parsing login to accept any pattery of input.
     stack_obj.stack_list = raw_input().split(" ")
     print "Current stack elements : ", stack_obj.print_stack_elements()
     # Push an element to stack.
     print "****** Stack push & pop operations ******\n"
 
     print "Enter an element to perform push operation."
-    # TODO: Incomplete here.
+    # TODO(Dhan): Incomplete here.
     # stack_obj.push_atend(raw_input())
     print "------ Performing push & pop operation at end ------"
     stack_obj.pop_atend()
@@ -58,6 +58,6 @@ def main():
     stack_obj.pop_atbegin()
     print "Current stack elements after pop at begin op : ", stack_obj.print_stack_elements()
 
-    
+
 if __name__ == '__main__':
     main()

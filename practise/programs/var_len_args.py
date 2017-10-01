@@ -2,16 +2,16 @@
 line."""
 import sys
 
-def printArgs(argv):
-    itr_cnt = 1
+def print_args(argv):
+    '''Print command line args.'''
     print "Total number of args: ", len(argv)
     for arg in range(0, len(argv)):
-      print "arg%d : %s" % (arg, argv[arg])
+        print "arg%d : %s" % (arg, argv[arg])
 
 if __name__ == '__main__':
-  printArgs(sys.argv)
+    print_args(sys.argv)
 
-
+#pylint: disable=pointless-string-statement
 """*********** OUTPUT *************
 $ python practise/var_len_args.py a b c d e f g h i j k
 Total number of args:  12

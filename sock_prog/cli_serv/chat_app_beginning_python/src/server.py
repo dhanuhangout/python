@@ -2,10 +2,11 @@
 import SocketServer
 import re
 import socket
+import sys
 import time
 
-HOSTNAME='127.0.0.1'
-PORT=8081
+HOSTNAME = '127.0.0.1'
+PORT = 8081
 
 class ClientError(Exception):
     """Client Exception."""
@@ -16,11 +17,13 @@ class ChatServer(SocketServer.ThreadingTCPServer):
     """The server class."""
 
     def __init__(self, server_address, RequestHandlerClass):
-        if server_address == None:
+        if server_address is None:
             server_address = (HOSTNAME, PORT)
         SocketServer.ThreadingTCPServer.__init__(self, server_address,
                                                  RequestHandlerClass)
         self.users = {}
+        self.nickname = None
+        self.parting_words = None
 
 
 class RequestHandler(SocketServer.StreamRequestHandler):
@@ -32,13 +35,13 @@ class RequestHandler(SocketServer.StreamRequestHandler):
     def handle(self):
         self.nickname = None
         self.private_message('Who are you?')
-        nickname = self._readline()
+        nikname = self._readline()
         done = False
         try:
-            self.nick_command(nickname)
+            self.nick_command(nikname)
             self.private_message(
-                'Hello %s, welcome to the Python Chat Server.' % nickname)
-            self.broadcast('%s has joined the chat.' % nickname, False)
+                'Hello %s, welcome to the Python Chat Server.' % nikname)
+            self.broadcast('%s has joined the chat.' % nikname, False)
         except ClientError, error:
             self.private_message(error.args[0])
             done = True
@@ -58,7 +61,8 @@ class RequestHandler(SocketServer.StreamRequestHandler):
         if self.nickname:
             message = '%s has quit.' % self.nickname
             if hasattr(self, 'parting_words'):
-                message = '%s has quit. %s' % (self.nickname,
+                message = '%s has quit. %s' % (
+                    self.nickname,
                     self.parting_words)
 
             self.broadcast(message, False)
@@ -98,21 +102,25 @@ class RequestHandler(SocketServer.StreamRequestHandler):
         self.server.users[nikname] = self.wfile
         self.nickname = nikname
         if old_nickname:
-            self.broadcast('%s is now known as %s' % (old_nickname,
-                self.nickname))
+            self.broadcast(
+                '%s is now known as %s' % (
+                    old_nickname,
+                    self.nickname))
 
-    def quit_command(self, parting_words):
+    def quit_command(self, part_words):
         """Quit command."""
-        if parting_words:
-            self.parting_words = parting_words
+        if part_words:
+            self.parting_words = part_words
         return True
 
     def users_command(self, ignored):
         """Users command."""
+        print ignored
         self.private_message(', '.join(self.server.users.keys()))
 
     def messages_command(self, ignored):
         """Messages command."""
+        print ignored
         self.wfile.write(self.msgs_queue)
         self.wfile.write('\r\n')
 
@@ -137,8 +145,10 @@ class RequestHandler(SocketServer.StreamRequestHandler):
         if len(self.msgs_queue) == self.LENGTH_OF_QUEUE:
             # Pop out old message from queue
             self.msgs_queue.pop(0)
-        self.msgs_queue.append({"timestamp": message_info[0],
-            "user": message_info[1], "text": message_info[2]})
+        self.msgs_queue.append(
+            {"timestamp": message_info[0],
+             "user": message_info[1],
+             "text": message_info[2]})
 
     def private_message(self, message):
         """Send private message to user."""
@@ -172,11 +182,10 @@ class RequestHandler(SocketServer.StreamRequestHandler):
 
 
 if __name__ == '__main__':
-    import sys
     if len(sys.argv) < 3:
-        hostname = HOSTNAME
-        port = PORT
+        H_NAME = HOSTNAME
+        P_NUM = PORT
     else:
-        hostname = sys.argv[1]
-        port = int(sys.argv[2])
-    ChatServer((hostname, port), RequestHandler).serve_forever()
+        H_NAME = sys.argv[1]
+        P_NUM = int(sys.argv[2])
+    ChatServer((H_NAME, P_NUM), RequestHandler).serve_forever()

@@ -23,10 +23,10 @@ def main():
     """Starting of the program."""
     print "Enter a number to find its factorial:"
     num = int(raw_input())
-    print "The factorial of given number '%d' is '%d'" % (num,
-            factorial_of_num(num))
-    print "The factorial of given number using recursive '%d' is '%d'" % (num,
-            factorial_of_num_recursive(num))
+    print "The factorial of given number '%d' is '%d'" % (
+        num, factorial_of_num(num))
+    print "The factorial of given number using recursive '%d' is '%d'" % (
+        num, factorial_of_num_recursive(num))
 
 
 if __name__ == '__main__':

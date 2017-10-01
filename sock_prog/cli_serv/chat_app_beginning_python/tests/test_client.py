@@ -23,7 +23,7 @@ class TestChatClient(unittest.TestCase):
     def setup(self):
         """Setup Class."""
         client_patch = mock.patch.object(
-            host=HOSTNAME, portPORT, nickname=client1, autospec=True)
+            host=HOSTNAME, port=PORT, nickname=client1, autospec=True)
 
     def test_run(self):
         """Test run."""

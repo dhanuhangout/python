@@ -21,14 +21,17 @@ class TestChatServer(unittest.TestCase):
 
     def setup(self):
         """Setup Test."""
-        server_patch = mock.patch.object(SocketServer.ThreadingTCPServer,
-            'ThreadingTCPServer', autospec=True)
+        server_patch = mock.patch.object(
+            SocketServer.ThreadingTCPServer,
+            'ThreadingTCPServer',
+            autospec=True)
         self._mock_tcpserver = server_patch.start()
         self.addCleanup(server_patch.stop)
 
     def test_process_input(self):
         """Test process_input."""
-        with patch.object(ReqHandlerObj,
+        with patch.object(
+            ReqHandlerObj,
             'process_input') as mock_process_input:
             ReqHandlerObj.process_input()
             # Validate, the process_input is actually called.
@@ -36,7 +39,8 @@ class TestChatServer(unittest.TestCase):
 
     def test_users_command(self):
         """Test users_command."""
-        with patch.object(ReqHandlerObj,
+        with patch.object(
+            ReqHandlerObj,
             'users_command') as mock_process_input:
             ReqHandlerObj.users_command()
             # Validate, the process_input is actually called.
@@ -44,7 +48,8 @@ class TestChatServer(unittest.TestCase):
 
     def test_messages_command(self):
         """Test messages_command."""
-        with patch.object(ReqHandlerObj,
+        with patch.object(
+            ReqHandlerObj,
             'messages_command') as mock_process_input:
             ReqHandlerObj.messages_command()
             # Validate, the process_input is actually called.
