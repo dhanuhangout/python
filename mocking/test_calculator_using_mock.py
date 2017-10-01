@@ -1,19 +1,23 @@
-import os, sys
+'''Unit test using mock.'''
+import os
+import sys
 
 from unittest import TestCase
+# from calculator import Calculator
+from mock import patch
 
 CURR_DIR = '%s' % os.getcwd()
 
 sys.path.append(CURR_DIR)
-# from calculator import Calculator
-from mock import patch
 
 
 class TestCalculator(TestCase):
+    '''Test Calculator module.'''
 
-    @patch('.Calculator.sum', return_value=9)
-    def test_sum(self, sum):
-        self.assertEqual(sum(2,3), 9)
+    @patch('.Calculator.add', return_value=9)
+    def test_sum(self, add):
+        '''Test sum operation.'''
+        self.assertEqual(add(2, 3), 9)
 
 
 # Ref:

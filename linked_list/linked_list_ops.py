@@ -1,124 +1,126 @@
+'''Linked list operations demonstration.'''
+#pylint: disable=too-few-public-methods
+class Node(object):
+    '''Node class containing a data and link.'''
+    def __init__(self):
+        self.data = None
+        self.link = None
+#pylint: enable=too-few-public-methods
 
-class Node:
-  '''Node class containing a data and link.'''
-  def __init__(self):
-    self.data = None
-    self.link = None
+class LinkedList(object):
+    '''Class that performs linked list operations.'''
+    def __init__(self):
+        self.node = Node()
 
-class LinkedList:
-  '''Class that performs linked list operations.'''
-  def __init__(self):
-    self.node = Node()
+    def add_atbegin(self, num):
+        '''Adds a node at the beginning of a linked list.'''
+        temp = Node()
+        temp.data = num
+        temp.link = self.node
+        self.node = temp
 
-  def add_atbegin(self, num):
-    '''Adds a node at the beginning of a linked list.'''
-    temp = Node()
-    temp.data = num
-    temp.link = self.node
-    self.node = temp
-
-  def add_atend(self, num):
-    '''Adds a node at the end of a linked list.'''
-    temp = Node()
-    r = Node()
-    if self.node.data == None:
-      temp.data = num
-      self.node = temp
-    else:
-      temp = self.node
-      while temp.link != None:
-        temp = temp.link
-      r.data = num
-      temp.link = r
-
-  def add_after(self, loc, num):
-    '''Adds a node after the specified number of nodes.'''
-    temp = Node()
-    r = Node()
-    temp = self.node
-    for i in range(loc):
-      temp = temp.link
-      if temp.data is None and temp.link is None:
-        print 'There are less than %d elements in list' % loc
-        return
-    r.link = temp.link
-    r.data = num
-    temp.link = r
-
-  def delete(self, num):
-    '''Deletes the specified node from the linked list.'''
-    old = Node()
-    temp = Node()
-    temp = self.node
-    while temp.link != None:
-      if temp.data == num:
-        if temp == self.node:
-          self.node = temp.link
+    def add_atend(self, num):
+        '''Adds a node at the end of a linked list.'''
+        temp = Node()
+        ref = Node()
+        if self.node.data is None:
+            temp.data = num
+            self.node = temp
         else:
-          old.link = temp.link
-        return
-      else:
-        old = temp
-        temp = temp.link
-    # If the element to be deleted is the last element.
-    if temp.data == num and temp.link == None:
-      old.link = temp.link
-      return
-    print 'Element %d not found' % num
+            temp = self.node
+            while temp.link is not None:
+                temp = temp.link
+            ref.data = num
+            temp.link = ref
 
-  def display(self):
-    '''Display the contents of the linked list.'''
-    print 'Contents of linked list are:'
-    temp = self.node
-    # print self.node.data, self.node.link
-    while temp.link != None: # TODO: Change it to while node.link != None:
-      print temp.data
-      temp = temp.link
-    # If the list index reaches last node or list contains only one node.
-    if temp.data != None and temp.link == None:
-      print temp.data
+    def add_after(self, loc, num):
+        '''Adds a node after the specified number of nodes.'''
+        temp = Node()
+        ref = Node()
+        temp = self.node
+        for _ in range(loc):
+            temp = temp.link
+            if temp.data is None and temp.link is None:
+                print 'There are less than %d elements in list' % loc
+                return
+        ref.link = temp.link
+        ref.data = num
+        temp.link = ref
 
-  def count(self):
-    '''Count the number of nodes present in the linked list.'''
-    print 'Returns count of number of nodes present in list.'
-    c = 0
-    temp = self.node
-    while temp.link != None:
-      temp = temp.link
-      c += 1
-    return c+1  # +1 is to add Last node of the list.
+    def delete(self, num):
+        '''Deletes the specified node from the linked list.'''
+        old = Node()
+        temp = Node()
+        temp = self.node
+        while temp.link is not None:
+            if temp.data is num:
+                if temp is self.node:
+                    self.node = temp.link
+                else:
+                    old.link = temp.link
+                return
+            else:
+                old = temp
+                temp = temp.link
+        # If the element to be deleted is the last element.
+        if temp.data is num and temp.link is None:
+            old.link = temp.link
+            return
+        print 'Element %d not found' % num
+
+    def display(self):
+        '''Display the contents of the linked list.'''
+        print 'Contents of linked list are:'
+        temp = self.node
+        # print self.node.data, self.node.link
+        while temp.link is not None:
+            print temp.data
+            temp = temp.link
+        # If the list index reaches last node or list contains only one node.
+        if temp.data is not None and temp.link is None:
+            print temp.data
+
+    def count(self):
+        '''Count the number of nodes present in the linked list.'''
+        print 'Returns count of number of nodes present in list.'
+        count = 0
+        temp = self.node
+        while temp.link is not None:
+            temp = temp.link
+            count += 1
+        return count + 1    # +1 is to add Last node of the list.
 
 
 if __name__ == '__main__':
-  p = LinkedList()
-  print 'Number of elements in the linked list = ', p.count()
-  
-  p.add_atend(14)
-  p.add_atend(30)
-  p.add_atend(25)
-  p.add_atend(42)
-  p.add_atend(17)
+    L_LIST = LinkedList()
+    print 'Number of elements in the linked list = ', L_LIST.count()
 
-  p.display()
+    L_LIST.add_atend(14)
+    L_LIST.add_atend(30)
+    L_LIST.add_atend(25)
+    L_LIST.add_atend(42)
+    L_LIST.add_atend(17)
 
-  p.add_atbegin(999)
-  p.add_atbegin(888)
-  p.add_atbegin(777)
+    L_LIST.display()
 
-  p.display()
+    L_LIST.add_atbegin(999)
+    L_LIST.add_atbegin(888)
+    L_LIST.add_atbegin(777)
 
-  p.add_after(7, 0)
-  p.add_after(2, 1)
-  p.add_after(5, 99)
+    L_LIST.display()
 
-  p.display()
-  print 'Number of elements in the linked list = ', p.count()
+    L_LIST.add_after(7, 0)
+    L_LIST.add_after(2, 1)
+    L_LIST.add_after(5, 99)
 
-  p.delete(99)
-  p.delete(1)
-  p.delete(10)
-  p.delete(777)
-  p.delete(0)
+    L_LIST.display()
+    print 'Number of elements in the linked list = ', L_LIST.count()
 
-  p.display()
-  print 'Number of elements in the linked list = ', p.count()
+    L_LIST.delete(99)
+    L_LIST.delete(1)
+    L_LIST.delete(10)
+    L_LIST.delete(777)
+    L_LIST.delete(0)
+
+    L_LIST.display()
+    print 'Number of elements in the linked list = ', L_LIST.count()

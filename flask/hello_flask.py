@@ -1,52 +1,61 @@
+'''Hello world flask.'''
 from flask import Flask
 from flask import jsonify
 from flask import request
 
-app = Flask(__name__)
+FLASK_APP = Flask(__name__)
 
 
-quarks = [{'name': 'up', 'charge': '+2/3'},
+QUARKS = [{'name': 'up', 'charge': '+2/3'},
           {'name': 'down', 'charge': '-1/3'},
           {'name': 'charm', 'charge': '+2/3'},
           {'name': 'strange', 'charge': '-1/3'}]
 
-@app.route('/', methods=['GET'])
+@FLASK_APP.route('/', methods=['GET'])
 def hello_world():
+    '''Hello workld function.'''
     return jsonify({'message' : 'Hello, World!'})
 
-@app.route('/quarks', methods=['GET'])
-def returnAll():
-    return jsonify({'quarks' : quarks})
+@FLASK_APP.route('/quarks', methods=['GET'])
+def return_all():
+    '''return_all.'''
+    return jsonify({'quarks' : QUARKS})
 
-@app.route('/quarks/<string:name>', methods=['GET'])
-def returnOne(name):
-    theOne = quarks[0]
-    for i,q in enumerate(quarks):
-      if q['name'] == name:
-        theOne = quarks[i]
-    return jsonify({'quarks' : theOne})
+@FLASK_APP.route('/quarks/<string:name>', methods=['GET'])
+def return_one(name):
+    '''return_one.'''
+    the_one = QUARKS[0]
+    for i, qua in enumerate(QUARKS):
+        if qua['name'] == name:
+            the_one = QUARKS[i]
+    return jsonify({'quarks' : the_one})
 
-@app.route('/quarks', methods=['POST'])
-def addOne():
+@FLASK_APP.route('/quarks', methods=['POST'])
+def add_one():
+    '''add_one.'''
     new_quark = request.get_json()
-    quarks.append(new_quark)
-    return jsonify({'quarks' : quarks})
+    QUARKS.append(new_quark)
+    return jsonify({'quarks' : QUARKS})
 
-@app.route('/quarks/<string:name>', methods=['PUT'])
-def editOne(name):
+@FLASK_APP.route('/quarks/<string:name>', methods=['PUT'])
+def edit_one(name):
+    '''edit_one.'''
     new_quark = request.get_json()
-    for i,q in enumerate(quarks):
-      if q['name'] == name:
-        quarks[i] = new_quark    
-    qs = request.get_json()
-    return jsonify({'quarks' : quarks})
+    for i, qua in enumerate(QUARKS):
+        if qua['name'] == name:
+            QUARKS[i] = new_quark
+    #pylint: disable=unused-variable
+    quas = request.get_json()
+    #pylint: enable=unused-variable
+    return jsonify({'quarks' : QUARKS})
 
-@app.route('/quarks/<string:name>', methods=['DELETE'])
-def deleteOne(name):
-    for i,q in enumerate(quarks):
-      if q['name'] == name:
-        del quarks[i]  
-    return jsonify({'quarks' : quarks})
+@FLASK_APP.route('/quarks/<string:name>', methods=['DELETE'])
+def delete_one(name):
+    '''delete_one.'''
+    for i, qua in enumerate(QUARKS):
+        if qua['name'] == name:
+            del QUARKS[i]
+    return jsonify({'quarks' : QUARKS})
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    FLASK_APP.run(debug=True)
