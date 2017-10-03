@@ -60,37 +60,47 @@ class AscendOrderLList(object):
         # reached, loop is terminated.
         while llist1.link is not None and llist2.link is not None:
             # If node being added in the first node.
-            if llist3.data is None:
+            '''if llist3.data is None:
                 temp = llist3
             else:
-                temp = temp.link
+                temp = temp.link'''
+            print 'check poin 1.'
 
             if llist1.data < llist2.data:
-                temp.data = llist1.data
+                self.node.data = llist1.data
                 llist1 = llist1.link
+                print 'check poin 2. = ', self.node.data
             else:
+                print 'check poin 3.'
                 if llist2.data < llist1.data:
-                    temp.data = llist2.data
+                    self.node.data = llist2.data
                     llist2 = llist2.link
+                    print 'check poin 4. = ', self.node.data
                 else:
+                    print 'check poin 5.'
                     if llist1.data == llist2.data:
-                        temp.data = llist2.data
+                        self.node.data = llist2.data
                         llist1 = llist1.link
                         llist2 = llist2.link
+                        print 'check poin 6. = ', self.node.data
 
         # If end of first list has not been reached.
         while llist1.link is not None:
-            temp = temp.link
-            temp.data = llist1.data
+            self.node = self.node.link
+            self.node.data = llist1.data
             llist1 = llist1.link
+            print 'check poin 7. = ', self.node.data
 
         # If end of second list has not been reached.
-        while llist2 is not None:
-            temp = temp.link
-            temp.data = llist2.data
+        while llist2.link is not None:
+            print 'check poin 8.'
+            self.node = self.node.link
+            if llist2.data is not None:
+                self.node.data = llist2.data
+                print 'check poin 9. = ', self.node.data
             llist2 = llist2.link
 
-        temp.link = None
+        # self.node.link = None
 
 
 if __name__ == '__main__':
@@ -122,7 +132,7 @@ if __name__ == '__main__':
     ASC_ORDER_LLIST_2.display()
     print 'No. of elements in the 2nd llist = %d' % ASC_ORDER_LLIST_2.count()
 
-    ASC_ORDER_LLIST_3.merge(ASC_ORDER_LLIST_1, ASC_ORDER_LLIST_2)
+    ASC_ORDER_LLIST_3.merge(ASC_ORDER_LLIST_1.node, ASC_ORDER_LLIST_2.node)
     print 'Merged list is:'
     ASC_ORDER_LLIST_3.display()
     print 'No. of elements in the 3rd llist = %d' % ASC_ORDER_LLIST_3.count()
