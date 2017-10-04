@@ -1,5 +1,6 @@
 '''Merging of two linked list with a condition of removing duplicates.'''
 
+#pylint: disable=too-few-public-methods
 class Node(object):
     '''Class contains data and link.'''
     def __init__(self):
@@ -32,6 +33,7 @@ class AscendOrderLList(object):
     def display(self):
         '''Display contents of the linked list.'''
         temp = self.node
+        # print 'in display: ', temp.data
         while temp.link is not None:
             print temp.data
             temp = temp.link
@@ -46,12 +48,13 @@ class AscendOrderLList(object):
         while temp.link is not None: # or temp.data is not None:
             count += 1
             temp = temp.link
+        if temp.data is not None and temp.link is None:
+            count += 1
         return count
 
     def merge(self, llist1, llist2):
-        llist3 = Node()
-        temp = Node()
-
+        '''Merge two linked lists, restricting common elements to occur only
+        one in the final list.'''
         # If both lists are empty.
         if llist1.link is None and llist2.link is None:
             return
@@ -59,48 +62,51 @@ class AscendOrderLList(object):
         # Traverse both linked lists till the end. If end of any one list is
         # reached, loop is terminated.
         while llist1.link is not None and llist2.link is not None:
-            # If node being added in the first node.
-            '''if llist3.data is None:
-                temp = llist3
-            else:
-                temp = temp.link'''
-            print 'check poin 1.'
-
+            new_node = Node()
             if llist1.data < llist2.data:
-                self.node.data = llist1.data
+                new_node.data = llist1.data
                 llist1 = llist1.link
-                print 'check poin 2. = ', self.node.data
             else:
-                print 'check poin 3.'
                 if llist2.data < llist1.data:
-                    self.node.data = llist2.data
+                    new_node.data = llist2.data
                     llist2 = llist2.link
-                    print 'check poin 4. = ', self.node.data
                 else:
-                    print 'check poin 5.'
                     if llist1.data == llist2.data:
-                        self.node.data = llist2.data
+                        new_node.data = llist2.data
                         llist1 = llist1.link
                         llist2 = llist2.link
-                        print 'check poin 6. = ', self.node.data
+            if self.node.data is None:
+                temp = Node()
+                temp.data = new_node.data
+                self.node = temp
+            else:
+                temp = Node()
+                temp = self.node
+                while temp.link is not None:
+                    temp = temp.link
+                temp.link = new_node
 
         # If end of first list has not been reached.
         while llist1.link is not None:
-            self.node = self.node.link
-            self.node.data = llist1.data
+            temp = Node()
+            new_node = Node()
+            temp = self.node
+            new_node.data = llist1.data
+            while temp.link is not None:
+                temp = temp.link
+            temp.link = new_node
             llist1 = llist1.link
-            print 'check poin 7. = ', self.node.data
 
         # If end of second list has not been reached.
         while llist2.link is not None:
-            print 'check poin 8.'
-            self.node = self.node.link
-            if llist2.data is not None:
-                self.node.data = llist2.data
-                print 'check poin 9. = ', self.node.data
+            temp = Node()
+            new_node = Node()
+            temp = self.node
+            new_node.data = llist2.data
+            while temp.link is not None:
+                temp = temp.link
+            temp.link = new_node
             llist2 = llist2.link
-
-        # self.node.link = None
 
 
 if __name__ == '__main__':
