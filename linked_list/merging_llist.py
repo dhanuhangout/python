@@ -76,36 +76,36 @@ class AscendOrderLList(object):
                         llist1 = llist1.link
                         llist2 = llist2.link
             if self.node.data is None:
-                temp = Node()
-                temp.data = new_node.data
-                self.node = temp
+                traverse_node = Node()
+                traverse_node.data = new_node.data
+                self.node = traverse_node
             else:
-                temp = Node()
-                temp = self.node
-                while temp.link is not None:
-                    temp = temp.link
-                temp.link = new_node
+                traverse_node = Node()
+                traverse_node = self.node
+                while traverse_node.link is not None:
+                    traverse_node = traverse_node.link
+                traverse_node.link = new_node
 
         # If end of first list has not been reached.
         while llist1.link is not None:
-            temp = Node()
+            traverse_node = Node()
             new_node = Node()
-            temp = self.node
+            traverse_node = self.node
             new_node.data = llist1.data
-            while temp.link is not None:
-                temp = temp.link
-            temp.link = new_node
+            while traverse_node.link is not None:
+                traverse_node = traverse_node.link
+            traverse_node.link = new_node
             llist1 = llist1.link
 
         # If end of second list has not been reached.
         while llist2.link is not None:
-            temp = Node()
+            traverse_node = Node()
             new_node = Node()
-            temp = self.node
+            traverse_node = self.node
             new_node.data = llist2.data
-            while temp.link is not None:
-                temp = temp.link
-            temp.link = new_node
+            while traverse_node.link is not None:
+                traverse_node = traverse_node.link
+            traverse_node.link = new_node
             llist2 = llist2.link
 
 
