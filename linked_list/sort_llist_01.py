@@ -59,18 +59,14 @@ class SortList01(object):
             count += 1
         return count
 
-    def selection_sort(self):
+    def selection_sort_nocount_use(self):
         '''Perform selection sort technique on given linked list.'''
-        print 'selection sort'
-
-    def bubble_sort(self):
-        '''Perform bubble sort technique on given linked list.'''
-        # Bubble sort works by comparing each element of the list with the
-        # element next to it and swapping them if required.
+        # Selection sort does positional comparision. i.e., compare element at
+        # 1st position with all elements till end of list and swap if required.
+        # Then move on to 2nd position and perform the same. And so on...
         p = self.node
-        # q = Node()
-        # q = p.link
         traverse_node = self.node
+        coun = 0
         if self.node.data is None:
             print 'No elements present in given list.'
         else:
@@ -78,54 +74,102 @@ class SortList01(object):
                 q = p.link
                 while q.link is not None:
                     # Arrange list in ascending order.
-                    print 'before if: p.data = ', p.data, 'q.data = ', q.data
+                    #print 'before if: p.data = ', p.data, 'q.data = ', q.data
                     if p.data > q.data:
                         temp = p.data
                         p.data = q.data
                         q.data = temp
-                        print 'inside if: p.data = ', p.data, 'q.data = ', q.data
+                        # print 'inside if: p.data = ', p.data, 'q.data = ', q.data
                     q = q.link
-                    print 'after if: p.data = ', p.data, 'q.data = ', q.data
+                    coun += 1
+                    print 'After %d iteration:' % coun
+                    self.display_list()
+                    #print 'after if: p.data = ', p.data, 'q.data = ', q.data
                 if q.data is not None and q.link is None:
                     if p.data < q.data:
                         temp = p.data
                         p.data = q.data
                         q.data = temp
                 p = p.link
-            '''print 'last element = ', p.data, 'q = ', q.data, 'traverse_node.data = ', traverse_node.data, 'self.node.data = ', self.node.data, self.node.link.data
+            # print 'last element = ', p.data, 'q = ', q.data
+            # print 'self.node.data = ', self.node.data
+
+            # Perform bubble sort on last element.
             if p.data is not None and p.link is None:
                 while traverse_node.link is not None:
-                    if p.data > traverse_node.data:
+                    if p.data < traverse_node.data:
                         temp = p.data
                         p.data = traverse_node.data
                         traverse_node.data = temp
                     traverse_node = traverse_node.link
                 if traverse_node.data is not None and traverse_node.link is None:
-                    if p.data > traverse_node.data:
+                    if p.data < traverse_node.data:
                         temp = p.data
                         p.data = traverse_node.data
                         traverse_node.data = temp
-                    traverse_node = traverse_node.link'''
-            # if p.link is None and p.data is not None:
+                    traverse_node = traverse_node.link
+
+    def bubble_sort(self):
+        '''Perform bubble sort technique on given linked list.'''
+        # Bubble sort works by comparing each element in the list with the
+        # element next to it and swapping them if required.
+        p = self.node
+        traverse_node = self.node
+        '''coun = 0
+        is_swapped = 1
+        if self.node.data is None:
+            print 'No elements present in given list.'
+        else:
+            while is_swapped > 0:
+                p = self.node
+                q = p.link
+                while p.link is not None:
+                    if p.data > q.data:
+                        # Do swap
+                        temp = p.data
+                        p.data = q.data
+                        q.data = temp
+                        is_swapped = True'''
 
 
 if __name__ == '__main__':
-    SORT_LIST = SortList01()
-    SORT_LIST.add_atend(9)
-    SORT_LIST.add_atend(8)
-    SORT_LIST.add_atend(7)
-    SORT_LIST.add_atend(6)
-    SORT_LIST.add_atend(5)
-    SORT_LIST.add_atend(4)
-    SORT_LIST.add_atend(3)
-    SORT_LIST.add_atend(2)
-    SORT_LIST.add_atend(1)
+    BUBBLE_SORT_LIST = SortList01()
+    BUBBLE_SORT_LIST.add_atend(9)
+    BUBBLE_SORT_LIST.add_atend(8)
+    BUBBLE_SORT_LIST.add_atend(7)
+    BUBBLE_SORT_LIST.add_atend(6)
+    BUBBLE_SORT_LIST.add_atend(5)
+    BUBBLE_SORT_LIST.add_atend(4)
+    BUBBLE_SORT_LIST.add_atend(3)
+    BUBBLE_SORT_LIST.add_atend(2)
+    BUBBLE_SORT_LIST.add_atend(1)
 
-    SORT_LIST.display_list()
+    #BUBBLE_SORT_LIST.display_list()
 
-    print 'Number of elements in linked list is: ', SORT_LIST.count()
+    #print 'Number of elements in linked list is: ', BUBBLE_SORT_LIST.count()
 
-    SORT_LIST.bubble_sort()
+    BUBBLE_SORT_LIST.bubble_sort()
 
     print 'Elements after bubble sort:'
-    SORT_LIST.display_list()
+    BUBBLE_SORT_LIST.display_list()
+
+    SELECT_SORT_LIST = SortList01()
+    SELECT_SORT_LIST.add_atend(9)
+    SELECT_SORT_LIST.add_atend(8)
+    SELECT_SORT_LIST.add_atend(7)
+    SELECT_SORT_LIST.add_atend(6)
+    SELECT_SORT_LIST.add_atend(5)
+    SELECT_SORT_LIST.add_atend(4)
+    SELECT_SORT_LIST.add_atend(3)
+    SELECT_SORT_LIST.add_atend(2)
+    SELECT_SORT_LIST.add_atend(1)
+
+
+    #SELECT_SORT_LIST.display_list()
+
+    #print 'Number of elements in linked list is: ', SELECT_SORT_LIST.count()
+
+    #SELECT_SORT_LIST.selection_sort()
+
+    #print 'Elements after selection sort:'
+    #SELECT_SORT_LIST.display_list()
