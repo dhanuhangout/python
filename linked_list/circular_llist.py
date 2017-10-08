@@ -31,7 +31,6 @@ class CircularLinkedList(object):
 
     def delcirq_atfront(self):
         '''Deletes an element from front of queue.'''
-        temp = Node()
         # If the queue is empty, nothing to do.
         if self.front.data is None:
             print 'The queue is empty.'
