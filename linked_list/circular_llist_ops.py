@@ -71,9 +71,16 @@ class CircularLListOps(object):
                 count += 1
         print 'Number of elements present in the queue: %d' % count
 
-    def earse(self):
+    def erase(self):
         '''Erases all nodes from a linked list.'''
         print 'erase'
+        temp = Node()
+
+        while self.front is not None:
+            temp = self.front
+            temp.link = None
+            self.front = self.front.link
+            temp = Node()
 
 
 if __name__ == '__main__':
@@ -100,5 +107,9 @@ if __name__ == '__main__':
 
     CIRCULAR_LLIST_OPS_SECOND.count()
 
-    CIRCULAR_LLIST_OPS_FIRST.concat(CIRCULAR_LLIST_OPS_FIRST.front, CIRCULAR_LLIST_OPS_SECOND.front)
-    CIRCULAR_LLIST_OPS_FIRST.display()
+    # CIRCULAR_LLIST_OPS_FIRST.concat(CIRCULAR_LLIST_OPS_FIRST.front, CIRCULAR_LLIST_OPS_SECOND.front)
+    # CIRCULAR_LLIST_OPS_FIRST.display()
+
+    CIRCULAR_LLIST_OPS_FIRST.erase()
+    print 'Number of elements after erasing:'
+    # CIRCULAR_LLIST_OPS_FIRST.display()
