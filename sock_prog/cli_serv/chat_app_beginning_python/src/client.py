@@ -6,8 +6,8 @@ import sys
 import os
 from threading import Thread
 
-HOSTNAME='127.0.0.1'
-PORT=8081
+HOSTNAME = '127.0.0.1'
+PORT = 8081
 
 
 class ClientError(Exception):
@@ -15,26 +15,27 @@ class ClientError(Exception):
     pass
 
 
+#pylint: disable=too-few-public-methods
 class ChatClient(object):
     """Chat Client Class."""
     def __init__(self, host, port, nickname):
         self.socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         self.socket.connect((host, port))
-        self.input = self.socket.makefile('rb', 0)
+        self.input_fd = self.socket.makefile('rb', 0)
         self.output = self.socket.makefile('wb', 0)
 
         #Send the given nickname to the server.
-        auth_demand = self.input.readline()
+        auth_demand = self.input_fd.readline()
         if not auth_demand.startswith("Who are you?"):
             raise ClientError("This doesn't seem to be a Python Chat Server.")
         self.output.write(nickname + '\r\n')
-        response = self.input.readline().strip()
+        response = self.input_fd.readline().strip()
         if not response.startswith("Hello"):
             raise ClientError(response)
         print response
         #Start out by printing out the list of members.
         self.output.write('/users\r\n')
-        print "Currently in the chat room:", self.input.readline().strip()
+        print "Currently in the chat room:", self.input_fd.readline().strip()
         self.run()
 
     def run(self):
@@ -48,9 +49,10 @@ class ChatClient(object):
         #Read from the network and print everything received to standard
         #output. Once data stops coming in from the network, it means
         #we've disconnected.
+        #pylint: disable=redefined-variable-type
         input_text = True
         while input_text:
-            input_text = self.input.readline()
+            input_text = self.input_fd.readline()
             if input_text:
                 print input_text.strip()
         propagate_stdin.done = True

@@ -53,8 +53,8 @@ def main():
     num2 = int(raw_input())
     if option in DICT_OBJ.keys():
         print DICT_OBJ[option](num1, num2)
-        print "Solution using lamdba form: ", DICT_OBJ_LAMBDA[option](num1,
-                num2)
+        print "Solution using lamdba form: ", DICT_OBJ_LAMBDA[option](
+	           num1, num2)
 
     # Lambda form demonstration.
     # print "Solution using lambda form"

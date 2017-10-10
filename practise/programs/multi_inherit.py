@@ -1,27 +1,31 @@
-
+'''Multi inheritance example.'''
+#pylint: disable=too-few-public-methods
 class ClassA(object):
+    '''Base ClassA.'''
     def __init__(self):
         super(ClassA, self).__init__()
         print "Class A constructor."
 
 class ClassB(object):
+    '''Base ClassB.'''
     def __init__(self):
         super(ClassB, self).__init__()
         print "Class B constructor."
 
-class trial1(ClassA, ClassB):
+class Trial1(ClassA, ClassB):
+    '''Dervied class Trial1.'''
     def __init__(self):
-        super(trial1, self).__init__()
+        super(Trial1, self).__init__()
         print "triail1 constructor."
 
 if __name__ == '__main__':
     print "Start."
-    temp_obj = trial1()
+    Trial1()
     print "End."
 
 
 # Output:
-# $ python multi_inherit.py 
+# $ python multi_inherit.py
 # Start.
 # Class B constructor.
 # Class A constructor.

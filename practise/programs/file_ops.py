@@ -2,17 +2,20 @@
 
 
 def get_f_obj_attrs(f_obj):
+    '''Get File attributes.'''
     print "Name of the file : ", f_obj.name
     print "File closed or not : ", f_obj.closed
     print "Opening mode : ", f_obj.mode
     print "Softspace flag : ", f_obj.softspace
 
 def f_mode_wb(f_obj):
+    '''File operation wb mode.'''
     print
     print "Enter some data"
     f_obj.write("Python is a great language.\nYeah its great!!!\n")
 
 def f_mode_rplus(f_obj):
+    '''File operation rplus mode.'''
     print
     print "Read data"
     print f_obj.read(10)
@@ -33,6 +36,7 @@ DICT_FILE_MODES = {
 }
 
 def file_ops(op_type):
+    '''File operations.'''
     f_obj = open("demo_file.txt", "%s" % op_type)
     print
     print "***** File attributes *****"

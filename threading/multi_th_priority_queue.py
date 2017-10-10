@@ -1,68 +1,73 @@
+'''Multi threading priority queue.'''
 #!/usr/bin/python
 
 import Queue
 import threading
 import time
 
-exitFlag = 0
+EXITFLAG = 0
 
-class myThread (threading.Thread):
-   def __init__(self, threadID, name, q):
-      threading.Thread.__init__(self)
-      self.threadID = threadID
-      self.name = name
-      self.q = q
-   def run(self):
-      print "Starting " + self.name
-      process_data(self.name, self.q)
-      print "Exiting " + self.name
+class MyThread(threading.Thread):
+    '''Thread class.'''
+    def __init__(self, t_id, name, que):
+        threading.Thread.__init__(self)
+        self.t_id = t_id
+        self.name = name
+        self.que = que
+    def run(self):
+        '''Run method.'''
+        print "Starting " + self.name
+        process_data(self.name, self.q)
+        print "Exiting " + self.name
 
-def process_data(threadName, q):
-   while not exitFlag:
-      queueLock.acquire()
-      if not workQueue.empty():
-         data = q.get()
-         queueLock.release()
-         print "%s processing %s" % (threadName, data)
-      else:
-         queueLock.release()
-      time.sleep(1)
+def process_data(thread_name, que):
+    '''Process data.'''
+    while not EXITFLAG:
+        QUEUELOCK.acquire()
+        if not WORKQUEUE.empty():
+            data = que.get()
+            QUEUELOCK.release()
+            print "%s processing %s" % (thread_name, data)
+        else:
+            QUEUELOCK.release()
+        time.sleep(1)
 
-threadList = ["Thread-1", "Thread-2", "Thread-3"]
-nameList = ["One", "Two", "Three", "Four", "Five"]
-queueLock = threading.Lock()
-workQueue = Queue.Queue(10)
-threads = []
-threadID = 1
+THREADLIST = ["Thread-1", "Thread-2", "Thread-3"]
+NAMELIST = ["One", "Two", "Three", "Four", "Five"]
+QUEUELOCK = threading.Lock()
+WORKQUEUE = Queue.Queue(10)
+THREADS = []
+THREAD_ID = 1
 
-# Create new threads
-for tName in threadList:
-   thread = myThread(threadID, tName, workQueue)
-   thread.start()
-   threads.append(thread)
-   threadID += 1
+# Create new THREADS
+for t_name in THREADLIST:
+    thread = MyThread(THREAD_ID, t_name, WORKQUEUE)
+    thread.start()
+    THREADS.append(thread)
+    THREAD_ID += 1
 
 # Fill the queue
-queueLock.acquire()
-for word in nameList:
-   workQueue.put(word)
-queueLock.release()
+QUEUELOCK.acquire()
+for word in NAMELIST:
+    WORKQUEUE.put(word)
+QUEUELOCK.release()
 
 # Wait for queue to empty
-while not workQueue.empty():
-   pass
+while not WORKQUEUE.empty():
+    pass
 
-# Notify threads it's time to exit
-exitFlag = 1
+# Notify THREADS it's time to exit
+EXITFLAG = 1
 
-# Wait for all threads to complete
-for t in threads:
-   t.join()
+# Wait for all THREADS to complete
+for t in THREADS:
+    t.join()
 print "Exiting Main Thread"
 
+#pylint: disable=pointless-string-statement
 '''
 OUPUT:
-$ python multi_th_priority_queue.py 
+$ python multi_th_priority_queue.py
 Starting Thread-1
 Starting Thread-2
 Starting Thread-3
