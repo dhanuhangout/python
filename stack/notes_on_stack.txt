@@ -1,0 +1,51 @@
+STACK
+-----
+
+Definition:
+A stack is a data structure in which addition of new element or deletion of an existing element always takes place at the same end.
+
+This end is often known as "top" of stack.
+------
+| 16 |  <-- top
+------
+| 31 |
+------
+| 29 |
+------
+| 18 |
+------
+| -3 |
+------
+| 14 |
+------
+
+Operations on stack:
+Push - Allows adding an element at the top of the stack.
+Pop - Allows to remove an element from the top of the stack.
+
+Representation of stack:
+Using array or list.
+Using linked list.
+
+Applications of stack:
+Evaluation of arithmetic expression: An arithmetic expression consists of operands and operators. Operands - numeric values or numeric variables. Operators - used in arithmetic expression (+, -, /, %, *).
+X = A / B + C * D - F * G / Q
+
+Arithmetic expression can be represented in three forms:
+Infix - A + B
+Prefix - + A B
+Postfix - A B +
+
+Examples:
+-------------------------------------------------------
+| Infix   |  A + B  |  A + B - C  |  (A + B) * C - D  |
+-------------------------------------------------------
+| Prefix  |  + A B  |  - + A B C  |  - * + A B C D    |
+-------------------------------------------------------
+| Postfix |  A B +  |  A B + C -  |  A B + C * D -    |
+-------------------------------------------------------
+
+Features of prefix and postfix expressions:
+- Operands maintain the same order as in the equivalent infix expression.
+- Parentheses are not needed to designate the expression unambiguously.
+- While evaluating the expression the priority of the operators is irrelevant.
