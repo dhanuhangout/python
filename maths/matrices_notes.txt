@@ -1,0 +1,30 @@
+1. A matrix is an arrangement of real or complex numbers into rows and columns so that all the rows (columns) contain equal number of elements.
+2. If a matrix consists of 'm' rows and 'n' columns, then it is said to be of order mXn.
+3. Square matrix: A matrix of order nXn
+4. Null matrix: A matrix (aij)mxn, if aij = 0 for all i and j
+5. Diagonal matrix: A matrix (aij)nxn, if aij = 0 for all i != j.
+6. Scalar matrix: A matrix (aij)nxn, if aij = 0 for all i != j and aij = k (constant) for i = j.
+7. Unit (Identity) matrix: A matrix (aij)nxn, if aij = 1, when i = j and
+								 				 aij = 0, when i != j
+8. Singular Matrix: A matrix (aij)nxn, if detA = 0
+9. Non-Singular Matrix: A matrix (aij)nxn, if detA != 0
+
+
+Matrix Operations:
+------------------
+1. Addition: If A = (aij)mxn, B = (bij)mxn, then A + B = (aij + bij)mxn
+2. Multiplicaion: If A = (aij)mxn, B = (bij)nxp, then AB = (Sigma K=1ton (aik x bkj))mxp
+3. Transpose: If A = (aij)mxn, then (A)T = (aji)nxm
+
+
+Theorems:
+---------
+1. If A is a matrix of order mxn, then (AI)n = (I)m(A) = A(AI = IA = A)
+2. If AB = CA = I, then B = C
+3. (KA)T = K(A)T, (A + B)T = AT + BT, (AB)T = (B)T x (A)T
+4. A(B + C) = AB + AC, (A + B)C = AC + BC
+5. If AB = 0, where A and B are non-zero square matrices, then both A and B are singular.
+6. If A is any square matrix, then A x adjA = adjA x A = detA x I
+7. If A is any square matrix and there exists a matrix B such that AB = BA = I, then B is called the inverse of A and denoted by A(-1).
+8. A x (A)-1 = (A)-1 x A = I.
+9. If A is non-singular, then (A)-1 = adjA/detA or adjA = A x (A)-1
