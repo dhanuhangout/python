@@ -1,6 +1,5 @@
 # Ref: https://pymotw.com/2/subprocess/
 # Ref:https://stackoverflow.com/questions/22366040/how-do-you-share-a-variable-between-two-processes-in-python
-# https://stackoverflow.com/questions/22366040/how-do-you-share-a-variable-between-two-processes-in-python
 """Pytest module to test sorting techniques."""
 import multiprocessing
 import os, sys
