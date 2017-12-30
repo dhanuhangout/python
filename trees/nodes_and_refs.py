@@ -40,14 +40,15 @@ class BinaryTree(object):
         '''Get root value.'''
         return self.key
 
-ROOT = BinaryTree('a')
-print ROOT.get_root_val()
-print ROOT.get_left_child()
-ROOT.insert_left('b')
-print ROOT.get_left_child()
-print ROOT.get_left_child().get_root_val()
-ROOT.insert_right('c')
-print ROOT.get_right_child()
-print ROOT.get_right_child().get_root_val()
-ROOT.get_right_child().set_root_val('hello')
-print ROOT.get_right_child().get_root_val()
+if __name__ == '__main__':
+    ROOT = BinaryTree('a')
+    print ROOT.get_root_val()
+    print ROOT.get_left_child()
+    ROOT.insert_left('b')
+    print ROOT.get_left_child()
+    print ROOT.get_left_child().get_root_val()
+    ROOT.insert_right('c')
+    print ROOT.get_right_child()
+    print ROOT.get_right_child().get_root_val()
+    ROOT.get_right_child().set_root_val('hello')
+    print ROOT.get_right_child().get_root_val()

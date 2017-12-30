@@ -28,15 +28,17 @@ def print_time(thread_name, counter, delay):
         print "%s: %s" % (thread_name, time.ctime(time.time()))
         counter -= 1
 
-# Create new threads
-THREAD1 = MyThread(1, "Thread-1", 1)
-THREAD2 = MyThread(2, "Thread-2", 2)
 
-# Start new Threads
-THREAD1.start()
-THREAD2.start()
+if __name__ == '__main__':
+    # Create new threads
+    THREAD1 = MyThread(1, "Thread-1", 1)
+    THREAD2 = MyThread(2, "Thread-2", 2)
 
-print "Exiting Main Thread"
+    # Start new Threads
+    THREAD1.start()
+    THREAD2.start()
+
+    print "Exiting Main Thread"
 
 #pylint: disable=pointless-string-statement
 '''

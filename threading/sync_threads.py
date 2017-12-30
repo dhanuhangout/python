@@ -27,25 +27,27 @@ def print_time(thread_name, delay, counter):
         print "%s: %s" % (thread_name, time.ctime(time.time()))
         counter -= 1
 
-THREADLOCK = threading.Lock()
-THREADS = []
 
-# Create new THREADS
-THREAD1 = MyThread(1, "Thread-1", 1)
-THREAD2 = MyThread(2, "Thread-2", 2)
+if __name__ == '__main__':
+    THREADLOCK = threading.Lock()
+    THREADS = []
 
-# Start new Threads
-THREAD1.start()
-THREAD2.start()
+    # Create new THREADS
+    THREAD1 = MyThread(1, "Thread-1", 1)
+    THREAD2 = MyThread(2, "Thread-2", 2)
 
-# Add THREADS to thread list
-THREADS.append(THREAD1)
-THREADS.append(THREAD2)
+    # Start new Threads
+    THREAD1.start()
+    THREAD2.start()
 
-# Wait for all THREADS to complete
-for t in THREADS:
-    t.join()
-print "Exiting Main Thread"
+    # Add THREADS to thread list
+    THREADS.append(THREAD1)
+    THREADS.append(THREAD2)
+
+    # Wait for all THREADS to complete
+    for t in THREADS:
+        t.join()
+    print "Exiting Main Thread"
 
 #pylint: disable=pointless-string-statement
 '''

@@ -32,37 +32,39 @@ def process_data(thread_name, que):
             QUEUELOCK.release()
         time.sleep(1)
 
-THREADLIST = ["Thread-1", "Thread-2", "Thread-3"]
-NAMELIST = ["One", "Two", "Three", "Four", "Five"]
-QUEUELOCK = threading.Lock()
-WORKQUEUE = Queue.Queue(10)
-THREADS = []
-THREAD_ID = 1
 
-# Create new THREADS
-for t_name in THREADLIST:
-    thread = MyThread(THREAD_ID, t_name, WORKQUEUE)
-    thread.start()
-    THREADS.append(thread)
-    THREAD_ID += 1
+if __name__ == '__main__':
+    THREADLIST = ["Thread-1", "Thread-2", "Thread-3"]
+    NAMELIST = ["One", "Two", "Three", "Four", "Five"]
+    QUEUELOCK = threading.Lock()
+    WORKQUEUE = Queue.Queue(10)
+    THREADS = []
+    THREAD_ID = 1
 
-# Fill the queue
-QUEUELOCK.acquire()
-for word in NAMELIST:
-    WORKQUEUE.put(word)
-QUEUELOCK.release()
+    # Create new THREADS
+    for t_name in THREADLIST:
+        thread = MyThread(THREAD_ID, t_name, WORKQUEUE)
+        thread.start()
+        THREADS.append(thread)
+        THREAD_ID += 1
 
-# Wait for queue to empty
-while not WORKQUEUE.empty():
-    pass
+    # Fill the queue
+    QUEUELOCK.acquire()
+    for word in NAMELIST:
+        WORKQUEUE.put(word)
+    QUEUELOCK.release()
 
-# Notify THREADS it's time to exit
-EXITFLAG = 1
+    # Wait for queue to empty
+    while not WORKQUEUE.empty():
+        pass
 
-# Wait for all THREADS to complete
-for t in THREADS:
-    t.join()
-print "Exiting Main Thread"
+    # Notify THREADS it's time to exit
+    EXITFLAG = 1
+
+    # Wait for all THREADS to complete
+    for t in THREADS:
+        t.join()
+    print "Exiting Main Thread"
 
 #pylint: disable=pointless-string-statement
 '''

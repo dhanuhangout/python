@@ -41,18 +41,19 @@ def get_left_child(root):
     return root[1]
 
 
-ROOT = binary_tree(3)
-insert_left(ROOT, 4)
-insert_left(ROOT, 5)
-insert_right(ROOT, 6)
-insert_right(ROOT, 7)
-LI = get_left_child(ROOT)
-print LI
+if __name__ == '__main__':
+    ROOT = binary_tree(3)
+    insert_left(ROOT, 4)
+    insert_left(ROOT, 5)
+    insert_right(ROOT, 6)
+    insert_right(ROOT, 7)
+    LI = get_left_child(ROOT)
+    print LI
 
-# set_root_val(1, 9)
-#print(ROOT)
+    # set_root_val(1, 9)
+    #print(ROOT)
 
-#insert_left(1, 11)
-#print(root)
+    #insert_left(1, 11)
+    #print(root)
 
-print get_right_child(get_right_child(ROOT))
+    print get_right_child(get_right_child(ROOT))
