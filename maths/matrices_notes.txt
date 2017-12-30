@@ -1,3 +1,5 @@
+TODO: CHANGE THIS FILE TO .md FORMAT.
+
 1. A matrix is an arrangement of real or complex numbers into rows and columns so that all the rows (columns) contain equal number of elements.
 2. If a matrix consists of 'm' rows and 'n' columns, then it is said to be of order mXn.
 3. Square matrix: A matrix of order nXn

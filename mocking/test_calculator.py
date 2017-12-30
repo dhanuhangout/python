@@ -2,7 +2,7 @@
 import os
 import sys
 
-from unittest import TestCase
+import unittest
 from calculator import Calculator
 
 CURR_DIR = '%s' % os.getcwd()
@@ -10,7 +10,7 @@ CURR_DIR = '%s' % os.getcwd()
 sys.path.append(CURR_DIR)
 
 
-class TestCalculator(TestCase):
+class TestCalculator(unittest.TestCase):
     '''Test Calculator module.'''
     def setUp(self):
         self.calc = Calculator()
@@ -20,6 +20,9 @@ class TestCalculator(TestCase):
         answer = self.calc.add(2, 4)
         self.assertEqual(answer, 6)
 
+
+if __name__ == '__main__':
+    unittest.main()
 
 # Ref:
 # https://semaphoreci.com/community/tutorials/getting-started-with-mocking-in-python

@@ -63,19 +63,19 @@ def euclidDivision(val_a, val_b):
 
 
 ''' Problem: Using Euclid's lemma, get HCF of two numbers.'''
+if __name__ == '__main__':
+    print '***** Euclid\'s Division Lemma Algorithm *****'
+    print 'HCF (100, 60) = ', euclidDivision(60, 100)
+    print 'HCF (90, 30) = ', euclidDivision(90, 30)
+    print 'HCF (50, 70) = ', euclidDivision(50, 70)
+    print 'HCF (96, 72) = ', euclidDivision(96, 72)
+    print 'HCF (300, 550) = ', euclidDivision(300, 550)
+    print 'HCF (1860, 2015) = ', euclidDivision(1860, 2015)
 
-print '***** Euclid\'s Division Lemma Algorithm *****'
-print 'HCF (100, 60) = ', euclidDivision(60, 100)
-print 'HCF (90, 30) = ', euclidDivision(90, 30)
-print 'HCF (50, 70) = ', euclidDivision(50, 70)
-print 'HCF (96, 72) = ', euclidDivision(96, 72)
-print 'HCF (300, 550) = ', euclidDivision(300, 550)
-print 'HCF (1860, 2015) = ', euclidDivision(1860, 2015)
-
-print '***** Traditional way of finding HCF of two numbers. *****'
-print 'HCF (100, 60) = ', getHCF(60, 100)
-print 'HCF (90, 30) = ', getHCF(90, 30)
-print 'HCF (50, 70) = ', getHCF(50, 70)
-print 'HCF (96, 72) = ', getHCF(96, 72)
-print 'HCF (300, 550) = ', getHCF(300, 550)
-print 'HCF (1860, 2015) = ', getHCF(1860, 2015)
+    print '***** Traditional way of finding HCF of two numbers. *****'
+    print 'HCF (100, 60) = ', getHCF(60, 100)
+    print 'HCF (90, 30) = ', getHCF(90, 30)
+    print 'HCF (50, 70) = ', getHCF(50, 70)
+    print 'HCF (96, 72) = ', getHCF(96, 72)
+    print 'HCF (300, 550) = ', getHCF(300, 550)
+    print 'HCF (1860, 2015) = ', getHCF(1860, 2015)
