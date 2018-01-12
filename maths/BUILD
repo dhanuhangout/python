@@ -1,9 +1,9 @@
 '''Build configuration file of problems in maths.'''
 
 py_binary(
-    name="euclids_theorem",
-    srcs=["euclids_theorem.py"],
-    main="euclids_theorem.py",
+    name="hcf_using_euclids_theorem",
+    srcs=["hcf_using_euclids_theorem.py"],
+    main="hcf_using_euclids_theorem.py",
 )
 
 py_binary(
