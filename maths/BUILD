@@ -11,3 +11,9 @@ py_binary(
     srcs=["matrices.py"],
     main="matrices.py",
 )
+
+py_binary(
+    name="number_system_conversion",
+    srcs=["number_system.py"],
+    main="number_system.py",
+)
