@@ -26,6 +26,7 @@ class Conversion(object):
     def anybase_to_decimal(self, i_value, base):
         '''Convert any base number system to decimal number system.'''
         decimal_num = 0
+        # TODO(dhanraju): Fix pylint error consider-using-enumerate.
         for i in range(len(i_value)):
             decimal_num += int(self.hexa_ns[i_value[i]]) * base**(len(i_value)-i-1)
         print 'Given number %s of base \'%d\' in decimal number is: %d' % (
