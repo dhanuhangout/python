@@ -47,6 +47,26 @@ class Conversion(object):
         print 'Given decimal number %s in base \'%d\' is: %s' % (
             i_value, base, converted_num)
 
+    def octal_to_binary(self, i_value):
+        '''Convert octal number to binary number.'''
+        # TODO(dhanraju): Implement this feature.
+        print i_value
+
+    def hexa_to_binary(self, i_value):
+        '''Convert octal number to binary number.'''
+        # TODO(dhanraju): Implement this feature.
+        print i_value
+
+    def octal_to_hexa(self, i_value):
+        '''Convert octal number to binary number.'''
+        # TODO(dhanraju): Implement this feature.
+        print i_value
+
+    def hexa_to_octal(self, i_value):
+        '''Convert octal number to binary number.'''
+        # TODO(dhanraju): Implement this feature.
+        print i_value
+
 
 if __name__ == '__main__':
     print 'Number system: Conversion demonstration.'
