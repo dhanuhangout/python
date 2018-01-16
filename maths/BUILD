@@ -17,3 +17,10 @@ py_binary(
     srcs=["number_system.py"],
     main="number_system.py",
 )
+
+py_test(
+    name="number_system_conversion_test",
+    srcs=["number_system_test.py"],
+    deps = [":number_system_conversion"],
+    main="number_system_test.py",
+)
