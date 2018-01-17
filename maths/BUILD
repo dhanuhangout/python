@@ -23,4 +23,5 @@ py_test(
     srcs=["number_system_test.py"],
     deps = [":number_system_conversion"],
     main="number_system_test.py",
+    size="small",
 )
