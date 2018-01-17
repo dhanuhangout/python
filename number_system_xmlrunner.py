@@ -4,7 +4,7 @@
 import unittest
 import xmlrunner
 
-def runner(output='python_tests_xml'):
+def runner(output='test-reports'):
 	print 'In runner.'
 	return xmlrunner.XMLTestRunner(output=output)
 
