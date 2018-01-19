@@ -35,6 +35,7 @@ class TestMatrices(unittest.TestCase):
 		rows = 3
 		columns = 5
 		matrices.initialize_null_matrix(null_matrix, rows, columns)
+		print null_matrix
 		self.assertEqual(null_matrix,
 			[[0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0]])
 
@@ -44,12 +45,13 @@ class TestMatrices(unittest.TestCase):
 		rows = 3
 		columns = 5
 		matrices.initialize_null_matrix(null_matrix, rows, columns)
+		print null_matrix
 		self.assertNotEqual(null_matrix,
 			[[1, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0]])
 
 
-if __name__ == '__main__':
-	unittest.main(testRunner=xmlrunner.XMLTestRunner(output='test-reports'))
+# if __name__ == '__main__':
+#	unittest.main(testRunner=xmlrunner.XMLTestRunner(output='test-reports'))
 
 '''
 TODO
