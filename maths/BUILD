@@ -25,3 +25,11 @@ py_test(
     main="number_system_test.py",
     size="small",
 )
+
+py_test(
+    name="matrices_test",
+    srcs=["matrices_test.py"],
+    deps = [":matrices"],
+    main="matrices_test.py",
+    size="small",
+)
