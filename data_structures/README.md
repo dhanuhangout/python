@@ -1,0 +1,1 @@
+Examples in this directory are captured from this link: https://pymotw.com/3/data_structures.html
