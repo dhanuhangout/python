@@ -1,0 +1,1 @@
+These examples are captured from the link: https://pymotw.com/3/enum/index.html
