@@ -7,7 +7,7 @@
 
    How to install tools:
    ---------------------
-   '''
+   ~~~~
    1. Git:
    TODO: Need to update this ;-).
 
@@ -18,12 +18,12 @@
    3. Pylint:
    sudo apt-get install pylint
    python coding standards explained here: https://www.python.org/dev/peps/pep-0008/
-   '''
+   ~~~~
 
 
    How to run tools:
    -----------------
-   '''
+   ~~~~
    1. git:
    git init
    git config user.name dh****ju
@@ -39,15 +39,15 @@
 
    3. pylint:
    pylint programs/factorial.py
-   '''
+   ~~~~
 
 
    How to pull this repo:
    ----------------------
-   '''
+   ~~~~
    mkdir dhanraju
    cd dh****ju
-   '''
+   ~~~~
    # Follow git section under "How to run tools".
 
 
@@ -66,23 +66,23 @@
    update dhanraju master branch:
 
    - Create a folder with dhanuhangout user and ha*******10@gmail.com email.
-   '''
+   ~~~~
    mkdir dhanuhangout_python
    cd dhanuhangout_python
    git init
    git config user.name dhanuhangout
    git config user.email ha********10@gmail.com
-   '''
+   ~~~~
    - Pull master branch of dhanraju (Remember not dhanuhangout, though the user is
    dhanuhangout).
-   '''
+   ~~~~
    git remote add origin https://github.com/dhanraju/python.git
    git pull origin master
-   '''
+   ~~~~
    - Edit file
-   '''
+   ~~~~
    git add Readme.txt
-   '''
+   ~~~~
    - login to github.com with user dhanraju and all dhanuhangout in
    settings->collaborators and then sign out.
    - login to github.com with user dhanuhangout and accept invitation from
@@ -120,7 +120,7 @@
    Add Readme file, commit it and push it to origin master.
 
 
-   '''
+   ~~~~
    git init
    git config user.name dhanuhangout
    git config user.email hangouttest10@gmail.com
@@ -133,7 +133,7 @@
    git add Readme.txt 
    git commit -m "Attempt to push dhanraju master to dhanuhangout master."
    git push -u origin master
-   '''
+   ~~~~
 
 
 
