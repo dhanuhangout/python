@@ -56,7 +56,6 @@
    mkdir dh****ju
    cd dh****ju
    ~~~~
-   # Follow git section under "How to run tools".
 
 
    How to push a change to repo:
