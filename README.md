@@ -7,15 +7,19 @@
 
    How to install tools:
    ---------------------
-   ~~~~
    1. Git:
+   ~~~~
    TODO: Need to update this ;-).
+   ~~~~
 
    2. Pytest:
+   ~~~~
    pip install -U pytest
    sudo pip install -U pytest
+   ~~~~
 
    3. Pylint:
+   ~~~~
    sudo apt-get install pylint
    python coding standards explained here: https://www.python.org/dev/peps/pep-0008/
    ~~~~
@@ -23,8 +27,8 @@
 
    How to run tools:
    -----------------
-   ~~~~
    1. git:
+   ~~~~
    git init
    git config user.name dh****ju
    git config user.email dh*********ju@gmail.com
@@ -33,11 +37,15 @@
    git add <filename.py>
    git commit -m "Message the reason for commit"
    git push -u origin master
+   ~~~~
 
    2. pytest:
+   ~~~~
    py.test test_factorial_v1.py
+   ~~~~
 
    3. pylint:
+   ~~~~
    pylint programs/factorial.py
    ~~~~
 
@@ -45,7 +53,7 @@
    How to pull this repo:
    ----------------------
    ~~~~
-   mkdir dhanraju
+   mkdir dh****ju
    cd dh****ju
    ~~~~
    # Follow git section under "How to run tools".
@@ -53,17 +61,15 @@
 
    How to push a change to repo:
    -----------------------------
-   Edit and save a file: vim ****.py
-   Add file to staging: git add ****.py
-   Commit the change: git commit -m "Message that explains the reason of change in
-   file."
-   Push change to master: git push origin master
+   1. Edit a file with your change and save it.
+   2. Add file to staging: git add ****.py
+   3. Commit the change: git commit -m "Message that explains the reason of change in file."
+   4. Push change to master: git push origin master
 
 
    Some Notes:
    -----------
-   1. Since, dhanraju repo is ahead of dhanuhangout; Followed below procedure to
-   update dhanraju master branch:
+   1. Since, dhanraju repo is ahead of dhanuhangout; Followed below procedure to update dhanraju master branch:
 
    - Create a folder with dhanuhangout user and ha*******10@gmail.com email.
    ~~~~
@@ -106,18 +112,15 @@
 
    Merging two master branches:
    ----------------------------
-   Both dhanuhangout/python and dhanraju/python remote names are origin and both
-   are respective master branches. Here dhanraju/python is fork of
-   dhanuhangout/python.
-   Permissions: dhanuhangout have collaborations permissions to dhanraju/python
-   master (which was given permissions through github.com under dhanraju account).
-   Create a folder, initialize git with dhanuhangout credentials.
-   Now, do git remote add origin of dhanraju/python.git.
-   Pull git repo.
-   Now, remove origin "git remote rm origin"
-   Do git remote add origin of dhanuhangout/python.git.
-   Pull git repo. Observer there is some difference in Readme.txt file. Since it is the only file that has difference between both masters.
-   Add Readme file, commit it and push it to origin master.
+   - Both dhanuhangout/python and dhanraju/python remote names are origin and both are respective master branches. Here dhanraju/python is fork of dhanuhangout/python.
+   - Permissions: dhanuhangout have collaborations permissions to dhanraju/python master (which was given permissions through github.com under dhanraju account).
+   - Create a folder, initialize git with dhanuhangout credentials.
+   - Now, do git remote add origin of dhanraju/python.git.
+   - Pull git repo.
+   - Now, remove origin "git remote rm origin"
+   - Do git remote add origin of dhanuhangout/python.git.
+   - Pull git repo. Observer there is some difference in Readme.txt file. Since it is the only file that has difference between both masters.
+   - Add Readme file, commit it and push it to origin master.
 
 
    ~~~~
@@ -141,12 +144,15 @@
 
    Before: (@dhanuhangout github graph)
    -------
+   ~~~~
    dhanuhangout    *-----*-----*-----*------------------------------*
                                      |
    dhanraju                          *-----*-----*-----*-----*
+   ~~~~
 
    After: (@dhanuhangout github graph)
    ------
+   ~~~~
    dhanuhangout    *-----*-----*-----*------------------------------*
                                      |                             /
                                      -----------------------------*
@@ -155,5 +161,4 @@
    dhanraju    *-----*-----*-----*-----*-----*-----*-----*-----*
                                  |                             
    dhanuhangout                  -----------------------------*----->*
-
-
+   ~~~~
