@@ -4,6 +4,8 @@ http://interactivepython.org/runestone/static/pythonds/SortSearch/searching.html
 # Table of Contents
 1. [Introduction](#section1)
 2. [Types of searching techniques](#section2)
+    2.1. [Sequential Search](#section2.1)
+    2.2. [Binary Search](#section2.2)
 3. [How to run code](#section3)
 
 ## Introduction <a name="section1"></a>
