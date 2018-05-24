@@ -1,9 +1,12 @@
 Ref: Problem Solving with Algorithm and Data Structures.  
 http://interactivepython.org/runestone/static/pythonds/SortSearch/searching.html
 
-[TOC]
+# Table of Contents
+1. [Introduction](#section1)
+2. [Types of searching techniques](#section2)
+3. [How to run code](#section3)
 
-## Introduction:
+## Introduction <a name="section1"></a>
 Searching is the algorithmic process of finding a particular item in a  
 collection of items.  
 A search typically answers either True or False as to whether the time is  
@@ -16,13 +19,12 @@ False
 >>> 3 in [3, 5, 2, 4, 1]  
 True  
 
-## Types of searching techniques:  
-------------------------------
+## Types of searching techniques <a name="section2"></a>  
 1. Linear or Sequential search  
 2. Binary search  
 
 
-### 1. Sequential Search:  
+### 1. Sequential Search <a name="section2.1"></a>  
 When items are stored in a collection such as a list, we say that they have a  
 linear or sequential relationship.  
 Starting at the first item in the list, we simply move from item to next item,  
@@ -41,11 +43,11 @@ Analysis:
 Based on this analysis, teh complexity of sequential search is O(n).  
 
 
-### 2. Binary Search:  
+### 2. Binary Search <a name="section2.2"></a>  
 Binary search will start by examining the middle item. If that item is the one we are searching for, we are done. If it is not the correct item, we can use the ordered nature of the list to eliminate half of the remaining items.
 In an ordered list, if the item we are searching is greater than the middle item, we know that the entire lower half of the list as well as the middle item can be eliminated from further consideration. The item, if it is in the list, must be in the upper half.
 We can then repeat the process with the upper half. S 
 
-## How to run code:  
+## How to run code <a name="section3"></a>  
 $ bazel run :searching_algs_bin  
 $ bazel test :searching_algs_test --test_output=all  
