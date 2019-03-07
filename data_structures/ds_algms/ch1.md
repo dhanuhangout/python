@@ -101,8 +101,6 @@ frozen set class is an immutable form of the set type, so it is legal to have a 
 
 ## 1.3 Expressions, Operators, and Precedence
 
-Logical Operators
-
 <table>
   <tr>
     <tr><th>Logical Operators</th></tr>
@@ -111,6 +109,7 @@ Logical Operators
     <tr><td>or</td></tr>
   </tr>
 </table>
+
 <table>
   <tr>
     <tr><th>Equlity Operators</th></tr>
@@ -120,3 +119,106 @@ Logical Operators
     <tr><td>!=</td></tr>
   </tr>
 </table>
+
+<table>
+  <tr>
+    <tr><th>Comparison Operators</th></tr>
+    <tr><td><</td></tr>
+    <tr><td><=</td></tr>
+    <tr><td>></td></tr>
+    <tr><td>>=</td></tr>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <tr><th>Arithmetic Operators</th></tr>
+    <tr><td>+</td></tr>
+    <tr><td>-</td></tr>
+    <tr><td>*</td></tr>
+    <tr><td>/</td></tr>
+    <tr><td>//</td></tr>
+    <tr><td>%</td></tr>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <tr><th>Bitwise Operators</th></tr>
+    <tr><td>~</td></tr>
+    <tr><td>&</td></tr>
+    <tr><td>|</td></tr>
+    <tr><td>^</td></tr>
+    <tr><td><<</td></tr>
+    <tr><td>>></td></tr>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <tr><th>Sequence Operators</th></tr>
+    <tr><td>s[j]</td></tr>
+    <tr><td>s[start:stop]</td></tr>
+    <tr><td>s[start:stop:step]</td></tr>
+    <tr><td>s + t</td></tr>
+    <tr><td>k * s</td></tr>
+    <tr><td>val in s</td></tr>
+    <tr><td>val not in s</td></tr>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <tr><th>Sets and Frozensets operators</th></tr>
+    <tr><td>key in s</td></tr>
+    <tr><td>key not in s</td></tr>
+    <tr><td>s1 == s2</td></tr>
+    <tr><td>s1 <= s2</td></tr>
+    <tr><td>s1 < s2</td></tr>
+    <tr><td>s1 >= s2</td></tr>
+    <tr><td>s1 > s2</td></tr>
+    <tr><td>s1 | s2</td></tr>
+    <tr><td>s1 & s2</td></tr>
+    <tr><td>s1 - s2</td></tr>
+    <tr><td>s1 ^ s2</td></tr>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <tr><th>Dictionairies operators</th></tr>
+    <tr><td>d[key]</td></tr>
+    <tr><td>d[key] = value</td></tr>
+    <tr><td>del d[key]</td></tr>
+    <tr><td>key in d</td></tr>
+    <tr><td>key not in d</td></tr>
+    <tr><td>d1 == d2</td></tr>
+    <tr><td>d1 != d2</td></tr>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <tr><th>Extended Assignment operators</th></tr>
+    <tr><td>alpha = [1, 2, 3]</td></tr>
+    <tr><td>beta = alpha</td></tr>
+    <tr><td>beta += [4, 5]</td></tr>
+    <tr><td>beta = beta + [6, 7]</td></tr>
+    <tr><td>print(alpha)</td></tr>
+  </tr>
+</table>
+
+
+### 1.3.1 Compount Expressions and Operator Precedence
+
+## 1.4 Control Flow
+### 1.4.1 Conditionals - if, elif
+### 1.4.2 Loops - while, for
+Special statements - Break, Continue
+Break - It immediately terminate a while or for loop when executed within its body. More formally, if applied within nested control structures, it causes the termination of the most immediately enclosing loop.
+Continue - It causes the current iteration of a loop body to stop, but with subsequent passes of the loop proceeding as expected.
+
+## 1.5 Functions
+### 1.5.1 Information Passing
+### 1.5.2 Built in functions
+
