@@ -22,7 +22,7 @@ and         classes elif         for     import  nonlocal raise   with
 
 ### 1.2.2 Creating and Using Objects
 
-### 1.2.3 Build-In Classes
+### 1.2.3 Built-In Classes
 A class is immutable if each object of that class has a fixed value upon instantiation that cannot subsequently be changed.
 
 <table>
@@ -35,54 +35,54 @@ A class is immutable if each object of that class has a fixed value upon instant
   <tr>
     <td>bool</td>
     <td>Boolean value</td>
-    <td>Yes</td>
+    <td>[x]</td>
   </tr>
 
   <tr>
     <td>int</td>
     <td>integer</td>
-    <td>Yes</td>
+    <td>[x]</td>
   </tr>
 
   <tr>
     <td>float</td>
     <td>floating point number</td>
-    <td>Yes</td>
+    <td>[x]</td>
   </tr>
 
   <tr>
     <td>list</td>
     <td>mutable sequence of objects</td>
-    <td>No</td>
+    <td>[]</td>
   </tr>
 
   <tr>
     <td>tuple</td>
     <td>immutable sequence of objects</td>
-    <td>Yes</td>
+    <td>[x]</td>
   </tr>
 
   <tr>
     <td>str</td>
     <td>character string</td>
-    <td>Yes</td>
+    <td>[x]</td>
   </tr>
 
   <tr>
     <td>set</td>
     <td>unordered set of distinct objects</td>
-    <td>No</td>
+    <td>[]</td>
   </tr>
 
   <tr>
     <td>frozen set</td>
     <td>immutable form of set class</td>
-    <td>Yes</td>
+    <td>[x]</td>
   </tr>
 
   <tr>
     <td>dict</td>
     <td>associative mapping</td>
-    <td>No</td>
+    <td>[]</td>
   </tr>
 </table>
