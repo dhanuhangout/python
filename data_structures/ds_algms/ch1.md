@@ -110,6 +110,8 @@ Logical Operators
     <tr><td>and</td></tr>
     <tr><td>or</td></tr>
   </tr>
+</table>
+<table>
   <tr>
     <tr><th>Equlity Operators</th></tr>
     <tr><td>is</td></tr>
