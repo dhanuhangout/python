@@ -15,9 +15,13 @@ Python is an object-oriented language and classes form the basis for all data ty
 
 ### 1.2.1 Identifiers, Objects, and the Assignment Statement
 Identifiers (Reseved Words):
+
 False       as      continue     else    from    in       not     return  yield
+
 None        assert  def          except  global  is       or      try
+
 Ture        break   del          finally if      lambda   pass    while
+
 and         classes elif         for     import  nonlocal raise   with
 
 ### 1.2.2 Creating and Using Objects
@@ -88,9 +92,13 @@ A class is immutable if each object of that class has a fixed value upon instant
 </table>
 
 set and frozenset classes:
+
 set class represents the mathemtical notion of a set, namely a collection of elements, without duplicates and without an inherent order to those elsements.
+
 Advantage - As opposed to a list, is that it has a hightly optimized method for checking whether a specific element is contained in the set. This is based on a data structure known as a hash table.
+
 eg: set - {'red', 'green', 'blue'}
+
 Restrictions -
 (1) The set doesn't maintain the elements in any particular order.
 (2) Only instances, floating-point numbers, and character strings are eligble to be elements of a set.
@@ -215,7 +223,9 @@ frozen set class is an immutable form of the set type, so it is legal to have a 
 ### 1.4.1 Conditionals - if, elif
 ### 1.4.2 Loops - while, for
 Special statements - Break, Continue
+
 Break - It immediately terminate a while or for loop when executed within its body. More formally, if applied within nested control structures, it causes the termination of the most immediately enclosing loop.
+
 Continue - It causes the current iteration of a loop body to stop, but with subsequent passes of the loop proceeding as expected.
 
 ## 1.5 Functions
