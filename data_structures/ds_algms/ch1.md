@@ -86,3 +86,34 @@ A class is immutable if each object of that class has a fixed value upon instant
     <td>&#9746;</td>
   </tr>
 </table>
+
+set and frozenset classes:
+set class represents the mathemtical notion of a set, namely a collection of elements, without duplicates and without an inherent order to those elsements.
+Advantage - As opposed to a list, is that it has a hightly optimized method for checking whether a specific element is contained in the set. This is based on a data structure known as a hash table.
+eg: set - {'red', 'green', 'blue'}
+Restrictions -
+(1) The set doesn't maintain the elements in any particular order.
+(2) Only instances, floating-point numbers, and character strings are eligble to be elements of a set.
+It is possible to maintain a set of tuples, but not a set of lists or a set of sets, as lists and sets are mutable.
+
+frozen set class is an immutable form of the set type, so it is legal to have a set of frozensets.
+
+
+## 1.3 Expressions, Operators, and Precedence
+
+Logical Operators
+
+<table>
+  <tr>
+    <th>Logical Operators</th>
+    <td>not</td>
+    <td>and</td>
+    <td>or</td>
+
+    <th>Equlity Operators</th>
+    <td>is</td>
+    <td>is not</td>
+    <td>==</td>
+    <td>!=</td>
+  </tr>
+</table>
