@@ -105,7 +105,7 @@ Logical Operators
 
 <table>
   <tr>
-    <th>Logical Operators</th>
+    <tr><th>Logical Operators</th></tr>
     <td>not</td>
     <td>and</td>
     <td>or</td>
