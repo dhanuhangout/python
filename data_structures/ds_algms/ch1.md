@@ -35,54 +35,54 @@ A class is immutable if each object of that class has a fixed value upon instant
   <tr>
     <td>bool</td>
     <td>Boolean value</td>
-    <td>- [x]</td>
+    <td> - [x]</td>
   </tr>
 
   <tr>
     <td>int</td>
     <td>integer</td>
-    <td>- [x]</td>
+    <td> - [x]</td>
   </tr>
 
   <tr>
     <td>float</td>
     <td>floating point number</td>
-    <td>- [x]</td>
+    <td> - [x]</td>
   </tr>
 
   <tr>
     <td>list</td>
     <td>mutable sequence of objects</td>
-    <td>- []</td>
+    <td> - []</td>
   </tr>
 
   <tr>
     <td>tuple</td>
     <td>immutable sequence of objects</td>
-    <td>- [x]</td>
+    <td> - [x]</td>
   </tr>
 
   <tr>
     <td>str</td>
     <td>character string</td>
-    <td>- [x]</td>
+    <td> - [x]</td>
   </tr>
 
   <tr>
     <td>set</td>
     <td>unordered set of distinct objects</td>
-    <td>- []</td>
+    <td> - []</td>
   </tr>
 
   <tr>
     <td>frozen set</td>
     <td>immutable form of set class</td>
-    <td>- [x]</td>
+    <td> - [x]</td>
   </tr>
 
   <tr>
     <td>dict</td>
     <td>associative mapping</td>
-    <td>- []</td>
+    <td> - []</td>
   </tr>
 </table>
