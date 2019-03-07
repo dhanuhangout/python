@@ -71,7 +71,7 @@ A class is immutable if each object of that class has a fixed value upon instant
   <tr>
     <td>set</td>
     <td>unordered set of distinct objects</td>
-    <td>&#9746;</td>
+    <td>&#x2612;</td>
   </tr>
 
   <tr>
