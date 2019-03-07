@@ -109,7 +109,8 @@ Logical Operators
     <tr><td>not</td></tr>
     <tr><td>and</td></tr>
     <tr><td>or</td></tr>
-  
+  </tr>
+  <tr>
     <tr><th>Equlity Operators</th></tr>
     <tr><td>is</td></tr>
     <tr><td>is not</td></tr>
