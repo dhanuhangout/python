@@ -106,14 +106,14 @@ Logical Operators
 <table>
   <tr>
     <tr><th>Logical Operators</th></tr>
-    <tr>not</tr>
-    <tr>and</tr>
-    <tr>or</tr>
+    <tr><td>not</td></tr>
+    <tr><td>and</td></tr>
+    <tr><td>or</td></tr>
   
-    <th>Equlity Operators</th>
-    <td>is</td>
-    <td>is not</td>
-    <td>==</td>
-    <td>!=</td>
+    <tr><th>Equlity Operators</th></tr>
+    <tr><td>is</td></tr>
+    <tr><td>is not</td></tr>
+    <tr><td>==</td></tr>
+    <tr><td>!=</td></tr>
   </tr>
 </table>
