@@ -77,12 +77,12 @@ A class is immutable if each object of that class has a fixed value upon instant
   <tr>
     <td>frozen set</td>
     <td>immutable form of set class</td>
-    <td> - [x]</td>
+    <td>:*:\check::</td>
   </tr>
 
   <tr>
     <td>dict</td>
     <td>associative mapping</td>
-    <td> - []</td>
+    <td>:*:\cross::</td>
   </tr>
 </table>
