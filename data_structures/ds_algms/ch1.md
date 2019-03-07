@@ -35,43 +35,43 @@ A class is immutable if each object of that class has a fixed value upon instant
   <tr>
     <td>bool</td>
     <td>Boolean value</td>
-    <td> - [x]</td>
+    <td>&#x2611;</td>
   </tr>
 
   <tr>
     <td>int</td>
     <td>integer</td>
-    <td> - [x]</td>
+    <td>&#9745;</td>
   </tr>
 
   <tr>
     <td>float</td>
     <td>floating point number</td>
-    <td> - [x]</td>
+    <td>&#9745;</td>
   </tr>
 
   <tr>
     <td>list</td>
     <td>mutable sequence of objects</td>
-    <td> - []</td>
+    <td>&#9745;</td>
   </tr>
 
   <tr>
     <td>tuple</td>
     <td>immutable sequence of objects</td>
-    <td> - [x]</td>
+    <td>&#9745;</td>
   </tr>
 
   <tr>
     <td>str</td>
     <td>character string</td>
-    <td> - [x]</td>
+    <td>&#9745;</td>
   </tr>
 
   <tr>
     <td>set</td>
     <td>unordered set of distinct objects</td>
-    <td> - []</td>
+    <td>&#9746;</td>
   </tr>
 
   <tr>
