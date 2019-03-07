@@ -105,11 +105,11 @@ Logical Operators
 
 <table>
   <tr>
-    <tr><th>Logical Operators</th></tr>
+    <tr><th>Logical Operators</th>
     <td>not</td>
     <td>and</td>
     <td>or</td>
-
+  </tr>
     <th>Equlity Operators</th>
     <td>is</td>
     <td>is not</td>
